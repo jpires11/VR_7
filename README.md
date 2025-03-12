@@ -6,3 +6,4 @@ docs:https://docs.google.com/document/d/1_WkB36oNDu4BM4dqhUGnGxLp7eM0t8F7UxKzdL2
 useful assets:
 https://www.kenney.nl/assets/page:8
 https://assetstore.unity.com/zh-CN/3d
+https://www.fab.com/category/3d-model?is_free=1
