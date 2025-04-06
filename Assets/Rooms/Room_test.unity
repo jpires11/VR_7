@@ -698,6 +698,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d01e759096bb3428082f3f46d87737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &435582274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435582266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d361c90b4c67d8f48b8bac3654ac167f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDistance: 2
+  walkSpeed: 2
 --- !u!1 &706514459
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,6 +2054,22 @@ MonoBehaviour:
   doorAnimator: {fileID: 0}
   openAnimationTrigger: Open
   socketInteractor: {fileID: 0}
+  onDoorOpened:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 435582274}
+        m_TargetAssemblyTypeName: CatController, Assembly-CSharp
+        m_MethodName: StartMove
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  catController: {fileID: 0}
 --- !u!1001 &2033989467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2238,6 +2268,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 435582273}
+    - targetCorrespondingSourceObject: {fileID: 1512832828412879256, guid: 1e4f0d9e7dbf221419b0bd0e1286aa16,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 435582274}
   m_SourcePrefab: {fileID: 100100000, guid: 1e4f0d9e7dbf221419b0bd0e1286aa16, type: 3}
 --- !u!4 &2033989468 stripped
 Transform:

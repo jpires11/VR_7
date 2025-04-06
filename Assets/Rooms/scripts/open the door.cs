@@ -6,12 +6,16 @@ public class OpenTheDoor : MonoBehaviour
     [Header("门动画设置")]
     [SerializeField] private Animator doorAnimator; // 门的动画控制器
     [SerializeField] private string openAnimationTrigger = "Open"; // 开门动画的触发器名称
+
+    [Header("音频设置")]
+    [SerializeField] private AudioSource doorAudio;
     
     [Header("交互设置")]
     [SerializeField] private UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor socketInteractor; // Socket交互器
 
     [Header("事件触发")]
-    [SerializeField] private UnityEngine.Events.UnityEvent onDoorOpened; // 新增事件触发器
+    [SerializeField] private UnityEngine.Events.UnityEvent onDoorOpened;
+    [SerializeField] private CatController catController; 
     
     
     private bool doorOpened = false; // 门的状态标记
@@ -28,6 +32,12 @@ public class OpenTheDoor : MonoBehaviour
         if (socketInteractor == null)
         {
             socketInteractor = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor>();
+        }
+
+        // 新增音频源自动获取
+        if (doorAudio == null)
+        {
+            doorAudio = GetComponent<AudioSource>();
         }
     }
 
@@ -69,10 +79,30 @@ public class OpenTheDoor : MonoBehaviour
         {
             doorAnimator.SetTrigger(openAnimationTrigger);
             doorOpened = true;
+
+            // 播放开门声音
+            if (doorAudio != null)
+            {
+                doorAudio.Play();
+            }
+            else
+            {
+                Debug.LogError("未设置AudioSource音频源");
+            }
+
             Debug.Log("门已打开");
             
-            // 新增事件触发
             onDoorOpened?.Invoke();
+            
+            // 新增猫咪移动触发
+            if (catController != null)
+            {
+                catController.StartMove();
+            }
+            else
+            {
+                Debug.LogError("未设置CatController引用");
+            }
         }
         else
         {
