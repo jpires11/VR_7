@@ -635,6 +635,7 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+
 --- !u!1001 &936298113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -751,6 +752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3480f924936e222449cd11d7a5a4ac69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
 --- !u!1001 &1231759507
 PrefabInstance:
   m_ObjectHideFlags: 0
