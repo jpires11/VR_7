@@ -7,6 +7,9 @@ TagManager:
   - Crate
   - Dirt
   - CinemachineTarget
+  - Letter_C
+  - Letter_A
+  - Letter_T
   layers:
   - Default
   - TransparentFX
