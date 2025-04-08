@@ -5,9 +5,14 @@ public class KittyFollowPlayer : MonoBehaviour
 {
     // 可以不需要手动指定player，自动获取
     private Transform playerTransform;
-    public float followSpeed = 3f;
+    public float followSpeed = 0.001f; // 降低默认速度
     public float stopDistance = 1f;
     private bool shouldFollow = false;
+    
+    // 动画参数名称
+    private readonly string walkAnimParam = "IsWalking";
+    // 直接引用Animator组件
+    public Animator kittyAnimator;
 
     private void Start()
     {
@@ -32,9 +37,15 @@ public class KittyFollowPlayer : MonoBehaviour
             // 计算与玩家的距离
             float distance = Vector3.Distance(transform.position, playerTransform.position);
 
-            // 如果距离大于停止距离，则移动
+            // 如果距离大于停止距离，则移动并播放行走动画
             if (distance > stopDistance)
             {
+                // 设置动画状态为行走
+                if (kittyAnimator != null)
+                {
+                    kittyAnimator.SetBool(walkAnimParam, true);
+                }
+                
                 Vector3 direction = (playerTransform.position - transform.position).normalized;
                 // 只在水平方向上移动（可选）
                 direction.y = 0;
@@ -44,6 +55,22 @@ public class KittyFollowPlayer : MonoBehaviour
                 
                 // 让Kitty朝向玩家
                 transform.LookAt(new Vector3(playerTransform.position.x, transform.position.y, playerTransform.position.z));
+            }
+            else
+            {
+                // 停止行走动画
+                if (kittyAnimator != null)
+                {
+                    kittyAnimator.SetBool(walkAnimParam, false);
+                }
+            }
+        }
+        else
+        {
+            // 确保不跟随时不播放行走动画
+            if (kittyAnimator != null)
+            {
+                kittyAnimator.SetBool(walkAnimParam, false);
             }
         }
     }
