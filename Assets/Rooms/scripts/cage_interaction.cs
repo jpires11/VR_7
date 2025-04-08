@@ -31,14 +31,45 @@ public class CageInteraction : MonoBehaviour
     {
         yield return new WaitForSeconds(2); 
         Animator animator = GetComponent<Animator>();
-        if (animator != null)
+        GameObject freeRoomA = GameObject.Find("Free_RoomA");
+        GameObject kittyObject = null;
+        if (freeRoomA != null)
         {
-            animator.SetTrigger("open_cage"); 
-            Debug.LogWarning("trigger open_cage!");
+            Transform kittyTransform = freeRoomA.transform.Find("Kitty_001");
+            if (kittyTransform != null)
+            {
+                kittyObject = kittyTransform.gameObject;
+            }
+            else
+            {
+                Debug.LogWarning("在Free_RoomA下找不到Kitty_001!");
+            }
         }
         else
         {
-            Debug.LogWarning("Animator component not found!");
+            Debug.LogWarning("找不到Free_RoomA对象!");
+        }
+        
+        if (animator != null && kittyObject != null)
+        {
+            animator.SetTrigger("open_cage"); 
+            Debug.LogWarning("trigger open_cage!");
+
+            Animator kittyAnimator = kittyObject.GetComponent<Animator>();
+            if (kittyAnimator != null)
+            {
+                kittyAnimator.SetTrigger("open_cage"); 
+                KittyFollowPlayer followScript = kittyObject.GetComponent<KittyFollowPlayer>();
+                if (followScript != null)
+                {
+                    followScript.StartFollowing();
+                }
+                Debug.LogWarning("trigger open_cage on Kitty_001!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Animator component not found or Kitty_001 not found!");
         }
     }
 }
