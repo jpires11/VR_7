@@ -5,18 +5,20 @@ using System.Collections;
 public class CustomSocketInteraction3 : MonoBehaviour
 {
     public string validTag = "Letter_T";
+    public bool isSocketed = false;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(validTag))
         {
             Debug.Log("Valid object detected!");
+            isSocketed = true;
         }
         else
         {
             other.gameObject.SetActive(false);
             Debug.Log("Invalid object detected and disabled!");
-            StartCoroutine(ReactivateObject(other.gameObject, 1f)); // 2秒后重新激活
+            StartCoroutine(ReactivateObject(other.gameObject, 1f));
         }
     }
 
