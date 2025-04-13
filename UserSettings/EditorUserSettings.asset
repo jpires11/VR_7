@@ -6,25 +6,28 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
-      value: 5100515256570c5954580e7b43770d44174e1e797b7d72332b7d1832b2b53060
+      value: 55050c51500c0b5d5b0d0f24117b5a44134e4b7b2f7825337a784a64b4e4636e
       flags: 0
     RecentlyUsedSceneGuid-1:
       value: 51540257510558030f56087a437606444716497d7e7f7e35747a4b65e4b1663e
       flags: 0
     RecentlyUsedSceneGuid-2:
-      value: 500502055d015f0f0b5d5e2712200c44424f4d7e2a297632292a4563b6e4673e
+      value: 5100515256570c5954580e7b43770d44174e1e797b7d72332b7d1832b2b53060
       flags: 0
     RecentlyUsedSceneGuid-3:
-      value: 55050c51500c0b5d5b0d0f24117b5a44134e4b7b2f7825337a784a64b4e4636e
-      flags: 0
-    RecentlyUsedSceneGuid-4:
       value: 0509010204020f59590d552015775a4344151b2f2a792232757b4566b1b5603c
       flags: 0
+    RecentlyUsedSceneGuid-4:
+      value: 500502055d015f0f0b5d5e2712200c44424f4d7e2a297632292a4563b6e4673e
+      flags: 0
     RecentlyUsedSceneGuid-5:
-      value: 5a08575f5207595a0f5d59741173094444164f7d7d2a23317c7a4465bbe1646d
+      value: 555750075c070f0a5e0d5d7046270d444e1548722d7b2435287c4a32b0b0313d
       flags: 0
     RecentlyUsedSceneGuid-6:
-      value: 555750075c070f0a5e0d5d7046270d444e1548722d7b2435287c4a32b0b0313d
+      value: 5a08575f5207595a0f5d59741173094444164f7d7d2a23317c7a4465bbe1646d
+      flags: 0
+    RecentlyUsedSceneGuid-7:
+      value: 53095253525150595e0b5a26117208441015417c742c23607a71456ab3b0633e
       flags: 0
     UnityEditor.ShaderGraph.Blackboard:
       value: 18135939215a0a5004000b0e15254b524c030a3f2964643d120d1230e9e93a3fd6e826abbd2e2d293c4ead313b08042de6030a0afa240c0d020be94c4baf5e435d8715fa32c70d15d11612dacc11fee5d3c5d1fe9ab1bf968e93e2ffcbc3e7e2f0b3ffe0e8b0be9af8ffaeffff8e85dd8390e3949c8899daa7
@@ -37,6 +40,9 @@ EditorUserSettings:
       flags: 0
     UnityEditor.ShaderGraph.ToggleSettings:
       value: 18135d1527590858060c032302276919051e1a26296a7c243f3c187fa0e92708f0e220e0e22d09352a0bed30017c5b2be01f0c47b40219221f1ded0b12eb1f0127cc0bcc18c41a5e910d0edbc85193e0dadadbf8e8f9e8ced7dba5e0b6aaaca4dbfeabfef4eae1
+      flags: 0
+    lightmappingBakingProfile:
+      value: 51
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650

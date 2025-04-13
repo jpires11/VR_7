@@ -69,10 +69,10 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"position"
 	"direction"
 	"rotatt"
 	"rotation"
-	"position"
 	"positio"
 	"rot"
 	"left rotat"

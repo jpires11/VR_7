@@ -2,28 +2,9 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AnimateHandOnInput
-    - AudioFindInteractableAffordance
-    - AudioManager
-    - Breakable
-    - ButtonPushOpenDoor
     - Controller.CreatureMover
     - Controller.MovePlayerInput
-    - DisableGrabbingHandModel
     - FadeScreen
-    - GameStartMenu
-    - MeteorPistol
-    - PlaySteps
-    - SceneTransitionManager
-    - SetOptionFromUI
-    - SetTurnTypeFromPlayerPref
-    - SpaceOutsideController
-    - TrashCan
-    - TriggerZone
-    - UIAudio
-    - UnityEngine.XR.Content.Interaction.XRKnob
-    - UnityEngine.XR.Content.Interaction.XRLever
-    - VoiceLineTrigger
-    - XRSocketTagInteractor
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -32,6 +13,9 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
+    Unity.InputSystem:
+    - UnityEngine.InputSystem.InputActionAsset
+    - UnityEngine.InputSystem.InputActionReference
     Unity.InputSystem.dll:
     - UnityEngine.InputSystem.InputActionAsset
     - UnityEngine.InputSystem.InputActionReference
@@ -74,7 +58,6 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.UI.UIFoldout
     Unity.RenderPipelines.Core.Runtime.dll:
     - UnityEngine.Rendering.ProbeVolumesOptions
-    - UnityEngine.Rendering.Volume
     - UnityEngine.Rendering.VolumeProfile
     Unity.RenderPipelines.Universal.Editor.dll:
     - UnityEditor.Rendering.Universal.UniversalProjectSettings
@@ -107,7 +90,9 @@ ScriptsOnlyBuild:
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.ShaderGraph.Editor.dll:
+    - UnityEditor.Graphing.GraphObject
     - UnityEditor.ShaderGraph.Drawing.MaterialGraphEditWindow
+    - UnityEditor.ShaderGraph.ShaderGraphProjectSettings
     Unity.TextMeshPro:
     - TMPro.TMP_ColorGradient
     - TMPro.TMP_FontAsset
@@ -115,65 +100,54 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     Unity.TextMeshPro.dll:
-    - TMPro.TMP_Dropdown
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    - TMPro.TextMeshPro
-    - TMPro.TextMeshProUGUI
     Unity.Timeline.Editor.dll:
     - TimelinePreferences
     - UnityEditor.Timeline.SequenceHierarchy
     - UnityEditor.Timeline.TimelineWindow
     Unity.Timeline.dll:
-    - UnityEngine.Timeline.ActivationPlayableAsset
-    - UnityEngine.Timeline.ActivationTrack
-    - UnityEngine.Timeline.AnimationPlayableAsset
-    - UnityEngine.Timeline.AnimationTrack
-    - UnityEngine.Timeline.AudioPlayableAsset
-    - UnityEngine.Timeline.AudioTrack
-    - UnityEngine.Timeline.SignalAsset
-    - UnityEngine.Timeline.SignalEmitter
-    - UnityEngine.Timeline.SignalReceiver
-    - UnityEngine.Timeline.SignalTrack
     - UnityEngine.Timeline.TimelineAsset
     Unity.XR.CoreUtils.dll:
     - Unity.XR.CoreUtils.XROrigin
     Unity.XR.Interaction.Toolkit:
+    - UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.Hands.HandExpressionCapture
+    - UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulator
     - UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulatorSettings
     - UnityEngine.XR.Interaction.Toolkit.InteractionLayerSettings
     Unity.XR.Interaction.Toolkit.Editor.dll:
     - UnityEditor.XR.Interaction.Toolkit.XRInteractionEditorSettings
+    Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator:
+    - UnityEngine.XR.Interaction.Toolkit.Samples.DeviceSimulator.XRDeviceSimulatorControllerUI
+    - UnityEngine.XR.Interaction.Toolkit.Samples.DeviceSimulator.XRDeviceSimulatorHandsUI
+    - UnityEngine.XR.Interaction.Toolkit.Samples.DeviceSimulator.XRDeviceSimulatorUI
+    Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator.dll:
+    - UnityEngine.XR.Interaction.Toolkit.Samples.DeviceSimulator.XRDeviceSimulatorControllerUI
+    - UnityEngine.XR.Interaction.Toolkit.Samples.DeviceSimulator.XRDeviceSimulatorHandsUI
+    - UnityEngine.XR.Interaction.Toolkit.Samples.DeviceSimulator.XRDeviceSimulatorUI
     Unity.XR.Interaction.Toolkit.Samples.StarterAssets.dll:
     - UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.ClimbTeleportDestinationIndicator
     - UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.ControllerAnimator
     - UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.ControllerInputActionManager
     - UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.DynamicMoveProvider
     - UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.GazeInputManager
-    - UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.XRPokeFollowAffordance
     Unity.XR.Interaction.Toolkit.dll:
-    - UnityEngine.XR.Interaction.Toolkit.ActionBasedContinuousTurnProvider
-    - UnityEngine.XR.Interaction.Toolkit.ActionBasedController
-    - UnityEngine.XR.Interaction.Toolkit.ActionBasedSnapTurnProvider
-    - UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Receiver.Audio.AudioAffordanceReceiver
     - UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Receiver.Rendering.ColorMaterialPropertyAffordanceReceiver
     - UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Rendering.MaterialPropertyBlockHelper
-    - UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.State.XRInteractableAffordanceStateProvider
     - UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.State.XRInteractorAffordanceStateProvider
-    - UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Audio.AudioAffordanceThemeDatum
     - UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Primitives.ColorAffordanceThemeDatum
     - UnityEngine.XR.Interaction.Toolkit.Attachment.InteractionAttachController
     - UnityEngine.XR.Interaction.Toolkit.Feedback.SimpleHapticFeedback
-    - UnityEngine.XR.Interaction.Toolkit.Filtering.XRPokeFilter
     - UnityEngine.XR.Interaction.Toolkit.Gaze.XRGazeAssistance
     - UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics.HapticImpulsePlayer
     - UnityEngine.XR.Interaction.Toolkit.Inputs.InputActionManager
+    - UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.Hands.HandExpressionCapture
+    - UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulator
     - UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulatorSettings
     - UnityEngine.XR.Interaction.Toolkit.Inputs.XRInputModalityManager
     - UnityEngine.XR.Interaction.Toolkit.Inputs.XRTransformStabilizer
-    - UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
-    - UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
     - UnityEngine.XR.Interaction.Toolkit.InteractionLayerSettings
     - UnityEngine.XR.Interaction.Toolkit.Interactors.Casters.CurveInteractionCaster
     - UnityEngine.XR.Interaction.Toolkit.Interactors.Casters.SphereInteractionCaster
@@ -185,23 +159,16 @@ ScriptsOnlyBuild:
     - UnityEngine.XR.Interaction.Toolkit.Interactors.XRInteractionGroup
     - UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor
     - UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor
-    - UnityEngine.XR.Interaction.Toolkit.Locomotion.Climbing.ClimbInteractable
     - UnityEngine.XR.Interaction.Toolkit.Locomotion.Climbing.ClimbProvider
     - UnityEngine.XR.Interaction.Toolkit.Locomotion.Climbing.ClimbTeleportInteractor
     - UnityEngine.XR.Interaction.Toolkit.Locomotion.LocomotionMediator
     - UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement.GrabMoveProvider
     - UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement.TwoHandedGrabMoveProvider
     - UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.GazeTeleportationAnchorFilter
-    - UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationAnchor
-    - UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationArea
     - UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationProvider
     - UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning.ContinuousTurnProvider
     - UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning.SnapTurnProvider
     - UnityEngine.XR.Interaction.Toolkit.Locomotion.XRBodyTransformer
-    - UnityEngine.XR.Interaction.Toolkit.LocomotionSystem
-    - UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster
-    - UnityEngine.XR.Interaction.Toolkit.UI.XRUIInputModule
-    - UnityEngine.XR.Interaction.Toolkit.XRInteractionManager
     Unity.XR.Management.Editor.dll:
     - UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget
     Unity.XR.Management.dll:
@@ -242,8 +209,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -266,21 +235,15 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Toggle
     - UnityEngine.UI.VerticalLayoutGroup
     UnityEngine.UI.dll:
-    - UnityEngine.EventSystems.EventSystem
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
-    - UnityEngine.UI.Mask
-    - UnityEngine.UI.ScrollRect
-    - UnityEngine.UI.Scrollbar
-    - UnityEngine.UI.Toggle
+    - UnityEngine.UI.Text
+    - UnityEngine.UI.VerticalLayoutGroup
   serializedClasses:
     Assembly-CSharp:
     - Controller.CreatureMover/LookWeight
-    - PlaySteps/Step
-    - Sound
-    - UnityEngine.XR.Content.Interaction.XRKnob/ValueChangeEvent
     Unity.InputSystem:
     - UnityEngine.InputSystem.InputAction
     - UnityEngine.InputSystem.InputActionMap
@@ -356,59 +319,36 @@ ScriptsOnlyBuild:
     - TMPro.FontAssetCreationSettings
     - TMPro.KerningTable
     - TMPro.TMP_Character
-    - TMPro.TMP_Dropdown/DropdownEvent
-    - TMPro.TMP_Dropdown/OptionData
-    - TMPro.TMP_Dropdown/OptionDataList
     - TMPro.TMP_FontFeatureTable
     - TMPro.TMP_FontWeightPair
     - TMPro.TMP_Sprite
     - TMPro.TMP_SpriteCharacter
     - TMPro.TMP_SpriteGlyph
     - TMPro.TMP_Style
-    - TMPro.VertexGradient
-    Unity.Timeline:
-    - UnityEngine.Timeline.AudioClipProperties
-    - UnityEngine.Timeline.AudioMixerProperties
-    - UnityEngine.Timeline.MarkerList
-    - UnityEngine.Timeline.SignalReceiver/EventKeyValue
-    - UnityEngine.Timeline.TimelineAsset/EditorSettings
-    - UnityEngine.Timeline.TimelineClip
     Unity.XR.CoreUtils:
     - Unity.XR.CoreUtils.ColorUnityEvent
     - Unity.XR.CoreUtils.Datums.AnimationCurveDatumProperty
     Unity.XR.Interaction.Toolkit:
-    - UnityEngine.XR.Interaction.Toolkit.ActivateEvent
     - UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.AffordanceThemeData`1
-    - UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Audio.AudioAffordanceTheme
-    - UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Audio.AudioAffordanceThemeData
-    - UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Audio.AudioAffordanceThemeDatumProperty
     - UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Primitives.ColorAffordanceTheme
     - UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Primitives.ColorAffordanceThemeDatumProperty
-    - UnityEngine.XR.Interaction.Toolkit.DeactivateEvent
     - UnityEngine.XR.Interaction.Toolkit.Feedback.HapticImpulseData
-    - UnityEngine.XR.Interaction.Toolkit.Filtering.PokeThresholdData
-    - UnityEngine.XR.Interaction.Toolkit.Filtering.PokeThresholdDatumProperty
-    - UnityEngine.XR.Interaction.Toolkit.FocusEnterEvent
-    - UnityEngine.XR.Interaction.Toolkit.FocusExitEvent
-    - UnityEngine.XR.Interaction.Toolkit.Gaze.XRGazeAssistance/InteractorData
     - UnityEngine.XR.Interaction.Toolkit.HoverEnterEvent
     - UnityEngine.XR.Interaction.Toolkit.HoverExitEvent
-    - UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics.XRInputHapticImpulseProvider
     - UnityEngine.XR.Interaction.Toolkit.Inputs.Readers.XRInputButtonReader
     - UnityEngine.XR.Interaction.Toolkit.Inputs.Readers.XRInputValueReader`1
+    - UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulator/SimulatedHandExpression
     - UnityEngine.XR.Interaction.Toolkit.InteractionLayerMask
     - UnityEngine.XR.Interaction.Toolkit.Interactors.IXRRayProvider
     - UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals.LineProperties
-    - UnityEngine.XR.Interaction.Toolkit.Interactors.XRInteractionGroup/GroupMemberAndOverridesPair
     - UnityEngine.XR.Interaction.Toolkit.Locomotion.Climbing.ClimbSettings
     - UnityEngine.XR.Interaction.Toolkit.Locomotion.Climbing.ClimbSettingsDatumProperty
-    - UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportVolumeDestinationSettings
-    - UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportVolumeDestinationSettingsDatumProperty
-    - UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportingEvent
     - UnityEngine.XR.Interaction.Toolkit.SelectEnterEvent
     - UnityEngine.XR.Interaction.Toolkit.SelectExitEvent
     - UnityEngine.XR.Interaction.Toolkit.UI.UIHoverEnterEvent
     - UnityEngine.XR.Interaction.Toolkit.UI.UIHoverExitEvent
+    Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator:
+    - UnityEngine.XR.Interaction.Toolkit.Samples.DeviceSimulator.XRDeviceSimulatorHandsUI/HandExpressionUI
     Unity.XR.OpenXR:
     - UnityEngine.XR.OpenXR.OpenXRSettings/ColorSubmissionModeList
     Unity.XR.OpenXR.Features.MetaQuestSupport:
@@ -419,8 +359,8 @@ ScriptsOnlyBuild:
     - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
     - UnityEngine.Events.PersistentListenerMode
-    - UnityEngine.Events.UnityEvent
     - UnityEngine.Events.UnityEvent`1
+    - UnityEngine.Pose
     - UnityEngine.RectOffset
     - UnityEngine.Rendering.RenderPipelineGraphicsSettingsCollection
     - UnityEngine.Vector2
@@ -450,24 +390,6 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerButton
     methodName: OnAction
   - assembly: Unity.RenderPipelines.Core.Runtime
-    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
-    methodName: OnScrollbarClicked
-  - assembly: Unity.RenderPipelines.Core.Runtime
-    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
-    methodName: OnScrollbarClicked
-  - assembly: Unity.RenderPipelines.Core.Runtime
-    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerIntField
-    methodName: OnIncrement
-  - assembly: Unity.RenderPipelines.Core.Runtime
-    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerIntField
-    methodName: OnDecrement
-  - assembly: Unity.RenderPipelines.Core.Runtime
-    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerIntField
-    methodName: OnDecrement
-  - assembly: Unity.RenderPipelines.Core.Runtime
-    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerIntField
-    methodName: OnIncrement
-  - assembly: Unity.RenderPipelines.Core.Runtime
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerUIntField
     methodName: OnDecrement
   - assembly: Unity.RenderPipelines.Core.Runtime
@@ -484,36 +406,30 @@ ScriptsOnlyBuild:
     methodName: OnDecrement
   - assembly: Unity.RenderPipelines.Core.Runtime
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerObjectPopupField
+    methodName: OnIncrement
+  - assembly: Unity.RenderPipelines.Core.Runtime
+    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
+    methodName: OnScrollbarClicked
+  - assembly: Unity.RenderPipelines.Core.Runtime
+    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
+    methodName: OnScrollbarClicked
+  - assembly: Unity.RenderPipelines.Core.Runtime
+    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerIntField
+    methodName: OnIncrement
+  - assembly: Unity.RenderPipelines.Core.Runtime
+    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerIntField
+    methodName: OnDecrement
+  - assembly: Unity.RenderPipelines.Core.Runtime
+    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerIntField
+    methodName: OnDecrement
+  - assembly: Unity.RenderPipelines.Core.Runtime
+    fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerIntField
     methodName: OnIncrement
   - assembly: Unity.RenderPipelines.Core.Runtime
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: ResetDebugManager
-  - assembly: Assembly-CSharp
-    fullTypeName: PlaySteps
-    methodName: PlayStepIndex
-  - assembly: Assembly-CSharp
-    fullTypeName: PlaySteps
-    methodName: PlayStepIndex
-  - assembly: Assembly-CSharp
-    fullTypeName: PlaySteps
-    methodName: PlayStepIndex
-  - assembly: Assembly-CSharp
-    fullTypeName: SceneTransitionManager
-    methodName: GoToSceneAsync
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.DirectorModule
-    fullTypeName: UnityEngine.Playables.PlayableDirector
-    methodName: Pause
-  - assembly: Assembly-CSharp
-    fullTypeName: PlaySteps
-    methodName: PlayStepIndex
-  - assembly: Assembly-CSharp
-    fullTypeName: PlaySteps
-    methodName: PlayStepIndex
   sceneClasses:
-    Assets/Scenes/1 Start Scene.unity:
+    Assets/Scenes/3 Test Cat.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -536,236 +452,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
-    - Class: 74
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
-    - Class: 90
-      Script: {instanceID: 0}
-    - Class: 91
-      Script: {instanceID: 0}
-    - Class: 95
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 34244}
-    - Class: 114
-      Script: {instanceID: 34464}
-    - Class: 114
-      Script: {instanceID: 34794}
-    - Class: 114
-      Script: {instanceID: 35036}
-    - Class: 114
-      Script: {instanceID: 35098}
-    - Class: 114
-      Script: {instanceID: 35290}
-    - Class: 114
-      Script: {instanceID: 35352}
-    - Class: 114
-      Script: {instanceID: 35452}
-    - Class: 114
-      Script: {instanceID: 35718}
-    - Class: 114
-      Script: {instanceID: 35852}
-    - Class: 114
-      Script: {instanceID: 35884}
-    - Class: 114
-      Script: {instanceID: 36184}
-    - Class: 114
-      Script: {instanceID: 36464}
-    - Class: 114
-      Script: {instanceID: 36538}
-    - Class: 114
-      Script: {instanceID: 36662}
-    - Class: 114
-      Script: {instanceID: 36948}
-    - Class: 114
-      Script: {instanceID: 37014}
-    - Class: 114
-      Script: {instanceID: 37236}
-    - Class: 114
-      Script: {instanceID: 37514}
-    - Class: 114
-      Script: {instanceID: 37516}
-    - Class: 114
-      Script: {instanceID: 37628}
-    - Class: 114
-      Script: {instanceID: 37682}
-    - Class: 114
-      Script: {instanceID: 37754}
-    - Class: 114
-      Script: {instanceID: 37790}
-    - Class: 114
-      Script: {instanceID: 37832}
-    - Class: 114
-      Script: {instanceID: 38946}
-    - Class: 114
-      Script: {instanceID: 39130}
-    - Class: 114
-      Script: {instanceID: 39340}
-    - Class: 114
-      Script: {instanceID: 39350}
-    - Class: 114
-      Script: {instanceID: 39526}
-    - Class: 114
-      Script: {instanceID: 39624}
-    - Class: 114
-      Script: {instanceID: 39928}
-    - Class: 114
-      Script: {instanceID: 40098}
-    - Class: 114
-      Script: {instanceID: 40260}
-    - Class: 114
-      Script: {instanceID: 40322}
-    - Class: 114
-      Script: {instanceID: 40326}
-    - Class: 114
-      Script: {instanceID: 40678}
-    - Class: 114
-      Script: {instanceID: 40784}
-    - Class: 114
-      Script: {instanceID: 40866}
-    - Class: 114
-      Script: {instanceID: 40974}
-    - Class: 114
-      Script: {instanceID: 41086}
-    - Class: 114
-      Script: {instanceID: 41222}
-    - Class: 114
-      Script: {instanceID: 41474}
-    - Class: 114
-      Script: {instanceID: 41902}
-    - Class: 114
-      Script: {instanceID: 42000}
-    - Class: 114
-      Script: {instanceID: 42248}
-    - Class: 114
-      Script: {instanceID: 42376}
-    - Class: 114
-      Script: {instanceID: 42378}
-    - Class: 114
-      Script: {instanceID: 42670}
-    - Class: 114
-      Script: {instanceID: 42758}
-    - Class: 114
-      Script: {instanceID: 43320}
-    - Class: 114
-      Script: {instanceID: 43628}
-    - Class: 114
-      Script: {instanceID: 44378}
-    - Class: 114
-      Script: {instanceID: 44408}
-    - Class: 114
-      Script: {instanceID: 45662}
-    - Class: 114
-      Script: {instanceID: 46012}
-    - Class: 114
-      Script: {instanceID: 46156}
-    - Class: 114
-      Script: {instanceID: 46224}
-    - Class: 114
-      Script: {instanceID: 46430}
-    - Class: 114
-      Script: {instanceID: 46584}
-    - Class: 114
-      Script: {instanceID: 46672}
-    - Class: 114
-      Script: {instanceID: 46806}
-    - Class: 114
-      Script: {instanceID: 47298}
-    - Class: 114
-      Script: {instanceID: 47372}
-    - Class: 114
-      Script: {instanceID: 47420}
-    - Class: 114
-      Script: {instanceID: 47498}
-    - Class: 114
-      Script: {instanceID: 47502}
-    - Class: 114
-      Script: {instanceID: 47520}
-    - Class: 114
-      Script: {instanceID: 47636}
-    - Class: 114
-      Script: {instanceID: 47796}
-    - Class: 114
-      Script: {instanceID: 47908}
-    - Class: 114
-      Script: {instanceID: 47944}
-    - Class: 114
-      Script: {instanceID: 48134}
-    - Class: 114
-      Script: {instanceID: 48448}
-    - Class: 114
-      Script: {instanceID: 48468}
-    - Class: 114
-      Script: {instanceID: 48552}
-    - Class: 114
-      Script: {instanceID: 48808}
-    - Class: 114
-      Script: {instanceID: 48854}
-    - Class: 114
-      Script: {instanceID: 48938}
-    - Class: 114
-      Script: {instanceID: 49064}
-    - Class: 114
-      Script: {instanceID: 49186}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 120
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 137
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/2 Space Ship Scene.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 54
-      Script: {instanceID: 0}
-    - Class: 64
-      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
-      Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -778,190 +469,196 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 33988}
+      Script: {instanceID: 33996}
     - Class: 114
-      Script: {instanceID: 34106}
+      Script: {instanceID: 34126}
     - Class: 114
-      Script: {instanceID: 34118}
+      Script: {instanceID: 34140}
     - Class: 114
-      Script: {instanceID: 34132}
+      Script: {instanceID: 34472}
     - Class: 114
-      Script: {instanceID: 34734}
+      Script: {instanceID: 34742}
     - Class: 114
-      Script: {instanceID: 34782}
+      Script: {instanceID: 34800}
     - Class: 114
-      Script: {instanceID: 34790}
+      Script: {instanceID: 34802}
     - Class: 114
-      Script: {instanceID: 34792}
+      Script: {instanceID: 35106}
     - Class: 114
-      Script: {instanceID: 35036}
+      Script: {instanceID: 35244}
     - Class: 114
-      Script: {instanceID: 35092}
+      Script: {instanceID: 35298}
     - Class: 114
-      Script: {instanceID: 35236}
+      Script: {instanceID: 35342}
     - Class: 114
-      Script: {instanceID: 35334}
+      Script: {instanceID: 35360}
     - Class: 114
-      Script: {instanceID: 35352}
+      Script: {instanceID: 35370}
     - Class: 114
-      Script: {instanceID: 35374}
+      Script: {instanceID: 35460}
     - Class: 114
-      Script: {instanceID: 35670}
+      Script: {instanceID: 35710}
     - Class: 114
-      Script: {instanceID: 35702}
+      Script: {instanceID: 35726}
     - Class: 114
-      Script: {instanceID: 35884}
+      Script: {instanceID: 35892}
     - Class: 114
-      Script: {instanceID: 35958}
+      Script: {instanceID: 36040}
     - Class: 114
-      Script: {instanceID: 36412}
+      Script: {instanceID: 36192}
     - Class: 114
-      Script: {instanceID: 36488}
+      Script: {instanceID: 36670}
     - Class: 114
-      Script: {instanceID: 36538}
+      Script: {instanceID: 36802}
     - Class: 114
-      Script: {instanceID: 36662}
+      Script: {instanceID: 36956}
     - Class: 114
-      Script: {instanceID: 36776}
+      Script: {instanceID: 37022}
     - Class: 114
-      Script: {instanceID: 36922}
+      Script: {instanceID: 37244}
     - Class: 114
-      Script: {instanceID: 37018}
+      Script: {instanceID: 37522}
     - Class: 114
-      Script: {instanceID: 37052}
+      Script: {instanceID: 37524}
     - Class: 114
-      Script: {instanceID: 37100}
+      Script: {instanceID: 37636}
     - Class: 114
-      Script: {instanceID: 37166}
+      Script: {instanceID: 37690}
     - Class: 114
-      Script: {instanceID: 37216}
+      Script: {instanceID: 37762}
     - Class: 114
-      Script: {instanceID: 37318}
+      Script: {instanceID: 37798}
     - Class: 114
-      Script: {instanceID: 37334}
+      Script: {instanceID: 37840}
     - Class: 114
-      Script: {instanceID: 37514}
+      Script: {instanceID: 37914}
     - Class: 114
-      Script: {instanceID: 37670}
+      Script: {instanceID: 38536}
     - Class: 114
-      Script: {instanceID: 37906}
+      Script: {instanceID: 38954}
     - Class: 114
-      Script: {instanceID: 37972}
+      Script: {instanceID: 39138}
     - Class: 114
-      Script: {instanceID: 38236}
+      Script: {instanceID: 39202}
     - Class: 114
-      Script: {instanceID: 38432}
+      Script: {instanceID: 39216}
     - Class: 114
-      Script: {instanceID: 38490}
+      Script: {instanceID: 39348}
     - Class: 114
-      Script: {instanceID: 39130}
-    - Class: 114
-      Script: {instanceID: 39194}
-    - Class: 114
-      Script: {instanceID: 39208}
-    - Class: 114
-      Script: {instanceID: 39340}
+      Script: {instanceID: 39358}
     - Class: 114
       Script: {instanceID: 39632}
     - Class: 114
-      Script: {instanceID: 39662}
-    - Class: 114
-      Script: {instanceID: 39718}
-    - Class: 114
-      Script: {instanceID: 40112}
-    - Class: 114
       Script: {instanceID: 40268}
     - Class: 114
-      Script: {instanceID: 40408}
+      Script: {instanceID: 40332}
     - Class: 114
-      Script: {instanceID: 40678}
+      Script: {instanceID: 40684}
     - Class: 114
-      Script: {instanceID: 41018}
+      Script: {instanceID: 40790}
     - Class: 114
-      Script: {instanceID: 41232}
+      Script: {instanceID: 40872}
     - Class: 114
-      Script: {instanceID: 41474}
+      Script: {instanceID: 40980}
     - Class: 114
-      Script: {instanceID: 41866}
+      Script: {instanceID: 41024}
     - Class: 114
-      Script: {instanceID: 42480}
+      Script: {instanceID: 41092}
     - Class: 114
-      Script: {instanceID: 42488}
+      Script: {instanceID: 41228}
     - Class: 114
-      Script: {instanceID: 42584}
+      Script: {instanceID: 41238}
     - Class: 114
-      Script: {instanceID: 42670}
+      Script: {instanceID: 41480}
     - Class: 114
-      Script: {instanceID: 42718}
+      Script: {instanceID: 41872}
     - Class: 114
-      Script: {instanceID: 42758}
+      Script: {instanceID: 42006}
     - Class: 114
-      Script: {instanceID: 42864}
+      Script: {instanceID: 42254}
     - Class: 114
-      Script: {instanceID: 42892}
+      Script: {instanceID: 42382}
     - Class: 114
-      Script: {instanceID: 43498}
+      Script: {instanceID: 42384}
     - Class: 114
-      Script: {instanceID: 43522}
+      Script: {instanceID: 42486}
     - Class: 114
-      Script: {instanceID: 43632}
+      Script: {instanceID: 42672}
     - Class: 114
-      Script: {instanceID: 44220}
+      Script: {instanceID: 42676}
     - Class: 114
-      Script: {instanceID: 44378}
+      Script: {instanceID: 42764}
     - Class: 114
-      Script: {instanceID: 44428}
+      Script: {instanceID: 42898}
     - Class: 114
-      Script: {instanceID: 44666}
+      Script: {instanceID: 43504}
     - Class: 114
-      Script: {instanceID: 44890}
+      Script: {instanceID: 43634}
     - Class: 114
-      Script: {instanceID: 44958}
+      Script: {instanceID: 44384}
     - Class: 114
-      Script: {instanceID: 45012}
+      Script: {instanceID: 44414}
     - Class: 114
-      Script: {instanceID: 45428}
+      Script: {instanceID: 44964}
     - Class: 114
-      Script: {instanceID: 45470}
+      Script: {instanceID: 45018}
     - Class: 114
-      Script: {instanceID: 45528}
+      Script: {instanceID: 45476}
     - Class: 114
-      Script: {instanceID: 45596}
+      Script: {instanceID: 45602}
     - Class: 114
-      Script: {instanceID: 45698}
+      Script: {instanceID: 45668}
     - Class: 114
-      Script: {instanceID: 45942}
+      Script: {instanceID: 46162}
     - Class: 114
-      Script: {instanceID: 46160}
+      Script: {instanceID: 46230}
     - Class: 114
-      Script: {instanceID: 46430}
+      Script: {instanceID: 46436}
     - Class: 114
-      Script: {instanceID: 46908}
+      Script: {instanceID: 46590}
     - Class: 114
-      Script: {instanceID: 47032}
+      Script: {instanceID: 46678}
     - Class: 114
-      Script: {instanceID: 47298}
+      Script: {instanceID: 46812}
     - Class: 114
-      Script: {instanceID: 47488}
+      Script: {instanceID: 47378}
     - Class: 114
-      Script: {instanceID: 47502}
+      Script: {instanceID: 47494}
     - Class: 114
-      Script: {instanceID: 47636}
+      Script: {instanceID: 47504}
     - Class: 114
-      Script: {instanceID: 48200}
+      Script: {instanceID: 47508}
     - Class: 114
-      Script: {instanceID: 48676}
+      Script: {instanceID: 47526}
     - Class: 114
-      Script: {instanceID: 48690}
+      Script: {instanceID: 47642}
     - Class: 114
-      Script: {instanceID: 48794}
+      Script: {instanceID: 47802}
+    - Class: 114
+      Script: {instanceID: 47914}
+    - Class: 114
+      Script: {instanceID: 47950}
+    - Class: 114
+      Script: {instanceID: 48140}
+    - Class: 114
+      Script: {instanceID: 48452}
+    - Class: 114
+      Script: {instanceID: 48556}
+    - Class: 114
+      Script: {instanceID: 48680}
+    - Class: 114
+      Script: {instanceID: 48858}
+    - Class: 114
+      Script: {instanceID: 49068}
+    - Class: 114
+      Script: {instanceID: 49190}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
       Script: {instanceID: 0}
-    - Class: 135
+    - Class: 128
       Script: {instanceID: 0}
-    - Class: 136
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
@@ -970,12 +667,6 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
-      Script: {instanceID: 0}
-    - Class: 198
-      Script: {instanceID: 0}
-    - Class: 199
-      Script: {instanceID: 0}
-    - Class: 205
       Script: {instanceID: 0}
     - Class: 210
       Script: {instanceID: 0}
@@ -987,9 +678,21 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    - Class: 320
+    - Class: 225
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: e354690d3791f1e5bf99a2d897f0dc3f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SetTurnTypeFromPlayerPref
+  - hash:
+      serializedVersion: 2
+      Hash: 1227bb81e06178b03e7d742f6055b25e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioFindInteractableAffordance
   - hash:
       serializedVersion: 2
       Hash: f9a8895200533849355f694993c06657
@@ -2364,12 +2067,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Universal.Runtime
     namespaceName: UnityEngine.Rendering.Universal
     className: ColorCurves
-  - hash:
-      serializedVersion: 2
-      Hash: e354690d3791f1e5bf99a2d897f0dc3f
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: SetTurnTypeFromPlayerPref
   - hash:
       serializedVersion: 2
       Hash: 47f78e94e3df8d612cefa1307a19e2ce
@@ -3854,12 +3551,6 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerVector4
   - hash:
       serializedVersion: 2
-      Hash: 1227bb81e06178b03e7d742f6055b25e
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: AudioFindInteractableAffordance
-  - hash:
-      serializedVersion: 2
       Hash: c4ae0ec287bc3cde0bc98e1a65f9cef7
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -4134,8 +3825,25 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 427701773b692bb9a90cc839bef92b0a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: HeadCrouchDetector
+  - hash:
+      serializedVersion: 2
+      Hash: 6d0762539f6dedc2355a21c441c2257c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: HeadHeight
+  - hash:
+      serializedVersion: 2
+      Hash: d9caa83193f2e387928a84c55ea2c5d8
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: LowCeilingRoomController
   platform: 13
   scenePathNames:
-  - Assets/Scenes/1 Start Scene.unity
-  - Assets/Scenes/2 Space Ship Scene.unity
-  playerPath: D:/VR/Space Scraper/Builds/Space Scraper V1.apk
+  - Assets/Scenes/3 Test Cat.unity
+  playerPath: D:/VR/VR_git/Builds/Test Cat5.apk
