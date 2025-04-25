@@ -12,6 +12,10 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         [Tooltip("The Text component this behavior uses to display the incremented value.")]
         Text m_Text;
 
+        [SerializeField]
+        [Tooltip("计数为1时要显示的目标对象")]
+        GameObject m_TargetObject;
+
         /// <summary>
         /// The Text component this behavior uses to display the incremented value.
         /// </summary>
@@ -38,8 +42,14 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         public void IncrementText()
         {
             m_Count += 1;
+            Debug.Log($"计数等于{m_Count}");
             if (m_Count == 1)
-                Debug.Log("计数等于1");
+            {
+                if (m_TargetObject != null)
+                    m_TargetObject.SetActive(true);
+                else
+                    Debug.Log("没有设置目标对象");
+            }
             if (m_Text != null)
                 m_Text.text = m_Count.ToString();
         }
