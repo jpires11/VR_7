@@ -38,6 +38,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         public void IncrementText()
         {
             m_Count += 1;
+            if (m_Count == 1)
+                Debug.Log("计数等于1");
             if (m_Text != null)
                 m_Text.text = m_Count.ToString();
         }

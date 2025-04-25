@@ -211,12 +211,14 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                     targetPosition = Vector3.ClampMagnitude(targetPosition, m_MaxDistance);
 
                 m_TransformTweenableVariable.target = targetPosition;
+
             }
             else if (m_ReturnToInitialPosition)
             {
                 m_TransformTweenableVariable.target = m_InitialPosition;
             }
         }
+
 
         public void ResetFollowTransform()
         {
