@@ -43,7 +43,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         {
             m_Count += 1;
             Debug.Log($"计数等于{m_Count}");
-            if (m_Count == 1)
+            if (m_Count == 3)
             {
                 if (m_TargetObject != null)
                     m_TargetObject.SetActive(true);
