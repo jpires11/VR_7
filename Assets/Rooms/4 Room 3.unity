@@ -2183,14 +2183,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Notes:
-
-    You can''t step in the water, please use the laser to indicate
-    the cat to solve the puzzle. (Hint: Please follow the order)
-
-
-    If you are
-    reay, please press the button to start.'
+  m_text: "Notes:\nYou can't step in the water, please use the laser to indicate
+    the cat to solve the puzzle. \n\nIf you are reay, please press the button to
+    start."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
