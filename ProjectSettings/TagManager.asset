@@ -10,6 +10,10 @@ TagManager:
   - Letter_C
   - Letter_A
   - Letter_T
+  - Left Hand
+  - Right Hand
+  - CatPickup
+  - Cat
   layers:
   - Default
   - TransparentFX
@@ -17,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Jump Zone
   - 
   - 
   - 
