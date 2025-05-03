@@ -2,34 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
-public class CatJump : MonoBehaviour
+[RequireComponent(typeof(InputData))]
+public class CatJumpController : MonoBehaviour
 {
-    public InputActionProperty jumpButton;
+    //public InputActionProperty jumpButton;
     public float jumpHeight = 3f;
     public CharacterController cc;
     public LayerMask groundlayers;
-    //public float minControllersVelocity = 2f;
+    public float minControllersVelocity = 2f;
 
+    private InputData _inputData;
     private float gravity = Physics.gravity.y;
     private Vector3 movement;
 
-    //private void Start()
-    //{
-    //    _inputData = GetComponent<InputData>();
-    //}
+    private void Start()
+    {
+        _inputData = GetComponent<InputData>();
+    }
 
     private void Update()
     {
         bool _isGrounded = IsGrounded();
 
-        if (jumpButton.action.WasPressedThisFrame() && _isGrounded)
-        {
-            Jump();
-        }
-        /*
-        if (_inputData._leftController.TryGetFeatureValue(CommonUsages.deviceVelocity, out Vector3 leftVelocity)
+        //if (jumpButton.action.WasPressedThisFrame() && _isGrounded)
+        //{
+        //    Jump();
+        //}
+
+        if (_inputData._leftController.TryGetFeatureValue(CommonUsages.deviceVelocity, out Vector3 leftVelocity) 
             && _inputData._rightController.TryGetFeatureValue(CommonUsages.deviceVelocity, out Vector3 rightVelocity)
             && _isGrounded)
         {
@@ -38,7 +40,7 @@ public class CatJump : MonoBehaviour
                 Jump();
             }
         }
-        */
+
         movement.y += gravity * Time.deltaTime;
 
         cc.Move(movement * Time.deltaTime);
