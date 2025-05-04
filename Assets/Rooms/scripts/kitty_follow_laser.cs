@@ -53,7 +53,7 @@ public class KittyFollowLaser : MonoBehaviour
         if (debugTimer >= debugInterval && laserPointer != null)
         {
             UpdateLaserTargetPosition(); // 更新目标位置
-            Debug.Log($"激光指向位置: {targetPosition}, 猫咪位置: {transform.position}, 距离: {Vector3.Distance(transform.position, targetPosition)}, 是否跟随: {shouldFollow}");
+            // Debug.Log($"激光指向位置: {targetPosition}, 猫咪位置: {transform.position}, 距离: {Vector3.Distance(transform.position, targetPosition)}, 是否跟随: {shouldFollow}");
             debugTimer = 0f;
         }
         
@@ -97,7 +97,7 @@ public class KittyFollowLaser : MonoBehaviour
                 transform.LookAt(new Vector3(targetPosition.x, transform.position.y, targetPosition.z));
                 
                 // 添加调试输出
-                Debug.Log($"猫咪正在移动! 方向: {direction}, 步长: {moveStep}, 新位置: {transform.position}");
+                // Debug.Log($"猫咪正在移动! 方向: {direction}, 步长: {moveStep}, 新位置: {transform.position}");
             }
             else
             {
@@ -106,7 +106,7 @@ public class KittyFollowLaser : MonoBehaviour
                 {
                     kittyAnimator.SetBool(walkAnimParam, false);
                 }
-                Debug.Log("猫咪已到达目标位置，停止移动");
+                // Debug.Log("猫咪已到达目标位置，停止移动");
             }
         }
         else
@@ -129,13 +129,13 @@ public class KittyFollowLaser : MonoBehaviour
             {
                 // 激光击中了物体，使用击中点作为目标
                 targetPosition = hit.point;
-                Debug.Log($"激光射线击中: {hit.collider.name}, 位置: {hit.point}");
+                // Debug.Log($"激光射线击中: {hit.collider.name}, 位置: {hit.point}");
             }
             else
             {
                 // 激光没有击中物体，使用一个远处的点作为目标
                 targetPosition = laserPointer.position + laserPointer.forward * 100f;
-                Debug.Log("激光射线未击中任何物体，使用远处点");
+                // Debug.Log("激光射线未击中任何物体，使用远处点");
             }
             
             // 确保目标位置在地面上（可选）
@@ -147,11 +147,11 @@ public class KittyFollowLaser : MonoBehaviour
     {
         if (laserPointer == null)
         {
-            Debug.LogError("无法找到激光指示器！");
+            // Debug.LogError("无法找到激光指示器！");
             return;
         }
         shouldFollow = true;
         soundTimer = soundInterval; // 设置计时器，使猫咪开始跟随时立即发出叫声
-        Debug.Log("Kitty开始跟随激光点！");
+        // Debug.Log("Kitty开始跟随激光点！");
     }
 }
