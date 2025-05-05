@@ -14,6 +14,7 @@ TagManager:
   - Right Hand
   - CatPickup
   - Cat
+  - LaserPointer
   layers:
   - Default
   - TransparentFX
