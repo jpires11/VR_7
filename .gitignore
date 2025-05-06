@@ -77,3 +77,6 @@ crashlytics-build.properties
 
 # MacOS
 .DS_Store
+/Assets/Real Stars Skybox
+/Assets/Real Stars Skybox
+*.png
