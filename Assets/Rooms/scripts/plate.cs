@@ -17,6 +17,7 @@ public class Plate : MonoBehaviour
     
     // 添加公共变量用于在Inspector中拖拽赋值
     public GameObject levelManager;
+    public GameObject fishbone;
     
     // 在开始时获取渲染器组件并保存原始颜色
     void Start()
@@ -42,6 +43,14 @@ public class Plate : MonoBehaviour
         else
         {
             Debug.LogWarning("场景中没有找到LevelManager对象");
+        }
+        if (fishbone != null)
+        {
+            fishbone.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("没有找到fishbone对象，请在Inspector中设置");
         }
     }
     
@@ -76,6 +85,12 @@ public class Plate : MonoBehaviour
             
             // Debug.Log("盘子被触碰，当前已触碰: " + touchedPlatesCount + "/" + totalPlates);
             
+            // 当盘子被触碰时，隐藏fishbone
+            if (fishbone != null)
+            {
+                fishbone.SetActive(false);
+            }
+            
             // 检查是否所有盘子都被触碰
             CheckAllPlatesCompleted();
         }
@@ -107,6 +122,12 @@ public class Plate : MonoBehaviour
             {
                 hasBeenTouched = false;
                 touchedPlatesCount--;
+                
+                // 重置时，让fishbone重新可见
+                if (fishbone != null)
+                {
+                    fishbone.SetActive(true);
+                }
             }
         }
     }
