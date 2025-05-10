@@ -1528,6 +1528,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5168928051921737817, guid: 78d2bcd488fdc0b4b804142b5cfc7b02,
+        type: 3}
+      propertyPath: m_MoveSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5548546861858554694, guid: 78d2bcd488fdc0b4b804142b5cfc7b02,
         type: 3}
       propertyPath: m_Radius
