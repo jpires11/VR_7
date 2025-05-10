@@ -55,12 +55,12 @@ public class CagePuzzle : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("在Free_RoomA下找不到Kitty_001!");
+                Debug.LogWarning("Can't find Kitty_001 in Free_RoomA!");
             }
         }
         else
         {
-            Debug.LogWarning("找不到Free_RoomA对象!");
+            Debug.LogWarning("Can't find Free_RoomA object!");
         }
 
         if (animator != null && kittyObject != null)
