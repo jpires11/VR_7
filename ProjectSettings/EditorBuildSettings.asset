@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Rooms/Bordel de HQ/Cat Interactions Testing.unity
     guid: 444712b16d1ed664f90de0403ec6d267
   - enabled: 0
-    path: Assets/Rooms/Bordel de HQ/Objects Sync Test.unity
+    path: Assets/Rooms/Bordel de HQ/Sync Rooms/Objects Sync Test.unity
     guid: beee9dbce4ecb3a4eb5813d56c1ffb5a
   - enabled: 1
     path: Assets/Rooms/4 Room 3.unity
