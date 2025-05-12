@@ -12,3 +12,50 @@ To be able to get the PDF document from the .rmd file some installations are nee
 - install.packages('tinytex')
 - tinytex::install_tinytex()
 
+## 📁 Script & Asset Attribution
+
+| Type                     | Description                                       |
+|--------------------------|---------------------------------------------------|
+| 🟢 Produced              | Created entirely by our team.                     |
+| 🟡 Adapted               | Modified from external sources.                   |
+| 🔴 Unmodified            | Used as-is from external sources.                 |
+
+---
+<details>
+<summary><strong>🔧 Basic Feature: [built-in XRIT ]</strong></summary>
+
+| File/Asset                     | Type       | Notes                                           |
+|-------------------------------|------------|-------------------------------------------------|
+| `name file`     | 🔴 Unmodified | Free asset from [source](#)                  |
+
+</details>
+<details>
+<summary><strong>🔧 Movement Custom Feature: [Jumping as a cat]</strong></summary>
+
+| File/Asset                     | Type       | Notes                                           |
+|-------------------------------|------------|-------------------------------------------------|
+| `name file`         | 🟢 Produced | Implements the core logic for feature X         |
+| `name file`   | 🟡 Adapted  | Resized and color-corrected                     |
+| `name file`     | 🔴 Unmodified | Free asset from [source](#)                  |
+
+</details>
+
+<details>
+<summary><strong>🔧 Non-movement Custom Feature: [Puzzles]</strong></summary>
+
+| File/Asset                     | Type       | Notes                                           |
+|-------------------------------|------------|-------------------------------------------------|
+| `scripts/featureY.js`         | 🟢 Produced | Backend handler for feature Y                   |
+| `assets/models/robot.fbx`     | 🔴 Unmodified | From [Sketchfab](#), used with license          |
+
+</details>
+<details>
+<summary><strong>🔧 Non-movement Custom Feature: [Cat]</strong></summary>
+
+| File/Asset                     | Type       | Notes                                           |
+|-------------------------------|------------|-------------------------------------------------|
+| `scripts/featureY.js`         | 🟢 Produced | Backend handler for feature Y                   |
+| `name file`   | 🟡 Adapted  | Resized and color-corrected                     |
+| `assets/models/robot.fbx`     | 🔴 Unmodified | From [Sketchfab](#), used with license          |
+
+</details>
