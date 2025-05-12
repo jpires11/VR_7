@@ -66,6 +66,7 @@ To be able to get the PDF document from the .rmd file some installations are nee
 | `Assets/Rooms/scripts/ButtonSquenceManager.cs`     | 🟢 Produced| Implementation of specific order at which button need to be pressed    |
 | `Assets/Rooms/scripts/LevelCompletion.cs`     | TYPE| NOTES   |
 </details>
+
 <details>
 <summary><strong>🔧 Non-movement Custom Feature: [Cat]</strong></summary>
 
@@ -74,6 +75,11 @@ To be able to get the PDF document from the .rmd file some installations are nee
 | `Assets/Rooms/scripts/kitty_follow.cs`     | 🟢 Produced |   NOTES    |
 
 | `PET CAR`   | TYPE |NOTES        |
+</details>
+<details>
+<summary><strong>🔧 Cybersickness Consideration: [Vision narrowing]</strong></summary>
 
-
+| File/Asset                     | Type       | Notes                                           |
+|-------------------------------|------------|-------------------------------------------------|
+| `FILE`     | 🟡 Adapted  |   NOTES    |
 </details>
