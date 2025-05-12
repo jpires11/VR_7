@@ -1,6 +1,8 @@
 # Nine Lives Laboratory
 
-- DESCRIPTION OF THE GAME
+The Nine Lives Laboratory is a place shrouded in mystery. The player awakens with no memory of how they arrived, the only clue to their escape lies in Kat, an unusually intelligent feline who seems to understand the secrets buried within the facility’s walls. As the player follows Kat deeper into the lab, they begin to uncover unsettling truths. But as the pieces come together, one question remains: was their arrival here truly an accident?
+To uncover the secrets of the Nine Lives Laboratory the player will need to solve a puzzle with the help of Kat the cat
+
 
 VR game for CS-444 course
 
@@ -31,7 +33,8 @@ To be able to get the PDF document from the .rmd file some installations are nee
 
 | File/Asset                     | Type       | Notes                                           |
 |-------------------------------|------------|-------------------------------------------------|
-| `name file`     | 🔴 Unmodified | Free asset from [[source](https://assetstore.unity.com/packages/3d/environments/sci-fi/free-lowpoly-scifi-110070)](#)                  |
+| `Assets/LowPoly SciFi`     | 🔴 Unmodified | Free asset from [[source](https://assetstore.unity.com/packages/3d/environments/sci-fi/free-lowpoly-scifi-110070)](#)                  |
+| `Assets/Rooms/animations`     | 🔴 Unmodified | Free asset from [[source](https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727)](#)                  |
 
 </details>
 <details>
@@ -58,17 +61,19 @@ To be able to get the PDF document from the .rmd file some installations are nee
 
 | File/Asset                     | Type       | Notes                                           |
 |-------------------------------|------------|-------------------------------------------------|
-| `scripts/featureY.js`         | 🟢 Produced | Backend handler for feature Y                   |
-| `assets/models/robot.fbx`     | 🔴 Unmodified | From [Sketchfab](#), used with license          |
-
+| `Assets/Rooms/scripts/cage_puzzle.cs`         | 🟢 Produced |    NOTES          |
+| `Assets/Rooms/scripts/Skip_scene.cs`     | 🟢 Produced|  Button becomes interactable once puzzle is solve and skip to next scene    |
+| `Assets/Rooms/scripts/ButtonSquenceManager.cs`     | 🟢 Produced| Implementation of specific order at which button need to be pressed    |
+| `Assets/Rooms/scripts/LevelCompletion.cs`     | TYPE| NOTES   |
 </details>
 <details>
 <summary><strong>🔧 Non-movement Custom Feature: [Cat]</strong></summary>
 
 | File/Asset                     | Type       | Notes                                           |
 |-------------------------------|------------|-------------------------------------------------|
-| `scripts/featureY.js`         | 🟢 Produced | Backend handler for feature Y                   |
-| `name file`   | 🟡 Adapted  | Resized and color-corrected                     |
-| `assets/models/robot.fbx`     | 🔴 Unmodified | From [Sketchfab](#), used with license          |
+| `Assets/Rooms/scripts/kitty_follow.cs`     | 🟢 Produced |   NOTES    |
+
+| `PET CAR`   | TYPE |NOTES        |
+
 
 </details>
