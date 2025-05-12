@@ -1,4 +1,7 @@
-# VR_7
+# Nine Lives Laboratory
+
+- DESCRIPTION OF THE GAME
+
 VR game for CS-444 course
 
 docs:https://docs.google.com/document/d/1_WkB36oNDu4BM4dqhUGnGxLp7eM0t8F7UxKzdL2E7LU/edit?tab=t.0
@@ -7,6 +10,7 @@ useful assets:
 https://www.kenney.nl/assets/page:8
 https://assetstore.unity.com/zh-CN/3d
 https://www.fab.com/category/3d-model?is_free=1
+
 
 To be able to get the PDF document from the .rmd file some installations are needed:
 - install.packages('tinytex')
@@ -21,6 +25,15 @@ To be able to get the PDF document from the .rmd file some installations are nee
 | 🔴 Unmodified            | Used as-is from external sources.                 |
 
 ---
+
+<details>
+<summary><strong>🔧 Assets: [3D models]</strong></summary>
+
+| File/Asset                     | Type       | Notes                                           |
+|-------------------------------|------------|-------------------------------------------------|
+| `name file`     | 🔴 Unmodified | Free asset from [[source](https://assetstore.unity.com/packages/3d/environments/sci-fi/free-lowpoly-scifi-110070)](#)                  |
+
+</details>
 <details>
 <summary><strong>🔧 Basic Feature: [built-in XRIT ]</strong></summary>
 
