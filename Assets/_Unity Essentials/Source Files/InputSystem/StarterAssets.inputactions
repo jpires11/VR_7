@@ -210,8 +210,8 @@
                 },
                 {
                     "name": "",
-                    "id": "d76c4b4c-a34a-4227-819b-5ea130e816d4",
-                    "path": "<XRController>{LeftHand}/triggerPressed",
+                    "id": "92ab59ca-7d4a-4ad7-bb1e-d2ad97c5c6c9",
+                    "path": "<XRController>{LeftHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

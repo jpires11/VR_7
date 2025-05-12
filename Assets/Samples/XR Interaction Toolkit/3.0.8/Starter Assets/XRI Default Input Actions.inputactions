@@ -975,6 +975,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Switch Character",
+                    "type": "Button",
+                    "id": "ee49d47f-5f17-4b7e-949f-5fe493bd4607",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1261,6 +1270,17 @@
                     "processors": "ScaleVector2(x=0),StickDeadzone",
                     "groups": "",
                     "action": "Translate Manipulation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "70839fde-d473-4d93-b196-a3fe656672da",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch Character",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

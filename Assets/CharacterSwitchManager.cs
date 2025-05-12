@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using Unity.XR.CoreUtils;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CharacterSwitchManager : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class CharacterSwitchManager : MonoBehaviour
     [Header("Movement Speeds")]
     public float humanSpeed = 1.5f;
     public float catSpeed = 3.0f;
+
+    [Header("Audio")]
+    public AudioSource catMeowAudio;
 
     // Internal state
     private bool isHuman;
@@ -104,12 +108,19 @@ public class CharacterSwitchManager : MonoBehaviour
             yield return new WaitForSeconds(fadeScreen.fadeDuration + fadeDelay);
         }
 
+        bool switchingToCat = isHuman;
         PerformCharacterSwitch();
 
         if (fadeScreen != null)
         {
             fadeScreen.FadeIn();
             yield return new WaitForSeconds(fadeScreen.fadeDuration);
+        }
+
+        // Play meow if switching to cat
+        if (switchingToCat && catMeowAudio != null)
+        {
+            catMeowAudio.Play();
         }
 
         // Re-enable CharacterController after the switch
