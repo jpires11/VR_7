@@ -8,12 +8,18 @@ public class CatDetector : MonoBehaviour
     public AudioClip purrClip;
 
     [Header("Purr Settings")]
-    public Transform targetObject; // Object to detect proximity to
+    public Transform targetObject;
     public float purrDistance = 1.5f;
+
+    [Header("Haptics")]
+    public float hapticIntensity = 0.3f;
+    public float hapticDuration = 0.1f;
 
     private AudioSource audioSource;
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable;
+    private UnityEngine.XR.Interaction.Toolkit.Interactors.XRBaseInputInteractor currentInteractor = null;
     private bool isPurring = false;
+    private float hapticTimer = 0f;
 
     void Start()
     {
@@ -32,6 +38,7 @@ public class CatDetector : MonoBehaviour
         }
 
         grabInteractable.selectEntered.AddListener(OnGrab);
+        grabInteractable.selectExited.AddListener(OnRelease);
     }
 
     void Update()
@@ -49,7 +56,18 @@ public class CatDetector : MonoBehaviour
                 audioSource.loop = true;
                 audioSource.Play();
                 isPurring = true;
+                hapticTimer = 0f;
                 Debug.Log("Cat is purring (close to target)");
+            }
+
+            if (isPurring && currentInteractor != null)
+            {
+                hapticTimer += Time.deltaTime;
+                if (hapticTimer >= hapticDuration)
+                {
+                    currentInteractor.SendHapticImpulse(hapticIntensity, hapticDuration);
+                    hapticTimer = 0f;
+                }
             }
         }
         else
@@ -59,6 +77,7 @@ public class CatDetector : MonoBehaviour
                 audioSource.Stop();
                 audioSource.loop = false;
                 isPurring = false;
+                hapticTimer = 0f;
                 Debug.Log("Cat stopped purring (too far from target)");
             }
         }
@@ -66,11 +85,18 @@ public class CatDetector : MonoBehaviour
 
     private void OnGrab(SelectEnterEventArgs args)
     {
-        if (meowClip != null && !audioSource.isPlaying)
+        currentInteractor = args.interactorObject as UnityEngine.XR.Interaction.Toolkit.Interactors.XRBaseInputInteractor;
+
+        if (meowClip != null)
         {
             audioSource.PlayOneShot(meowClip);
             Debug.Log("Cat grabbed, meow!");
         }
+    }
+
+    private void OnRelease(SelectExitEventArgs args)
+    {
+        currentInteractor = null;
     }
 
     private void OnDestroy()
@@ -78,6 +104,7 @@ public class CatDetector : MonoBehaviour
         if (grabInteractable != null)
         {
             grabInteractable.selectEntered.RemoveListener(OnGrab);
+            grabInteractable.selectExited.RemoveListener(OnRelease);
         }
     }
 }
