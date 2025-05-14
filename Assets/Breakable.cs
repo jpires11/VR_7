@@ -5,6 +5,7 @@ using UnityEngine;
 public class Breakable : MonoBehaviour
 {
     public List<GameObject> breakablePieces;
+    public RemoteBreakable secondaryBreakable;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,7 +24,14 @@ public class Breakable : MonoBehaviour
             piece.SetActive(true);
             piece.transform.parent = null;
         }
+       
         //  Debug.Log("Vase Broke");
         gameObject.SetActive(false);
+
+        if (secondaryBreakable != null)
+        {
+            secondaryBreakable.TriggerBreak();
+        }
+
     }
 }
