@@ -17,6 +17,11 @@ TagManager:
   - LaserPointer
   - Truck
   - Key
+  - Lever
+  - Wheel
+  - RedPotion
+  - BluePotion
+  - GreenPotion
   layers:
   - Default
   - TransparentFX
