@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/9 Doors and Drawers 1/Texture (1).png.meta
 guid: 934943ee4eb17a84ca86510a9df328bc
+========
+guid: 53502c1cc850f4e7a9c99bfe9fabdda9
+>>>>>>>> 9485e30ca1292dc9432af08eaa8ec658e49ac6dd:Assets/Rooms/Textures/car_buttons.jpg.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
