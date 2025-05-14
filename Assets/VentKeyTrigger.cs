@@ -17,7 +17,7 @@ public class VentKeyTrigger : MonoBehaviour
             return;
         }
 
-        if (other.CompareTag("Key"))
+        if (other.CompareTag("Player"))
         {
             if (keyCat != null)
             {
@@ -27,8 +27,9 @@ public class VentKeyTrigger : MonoBehaviour
             if (keyPlayer != null)
             {
                 keyPlayer.SetActive(true);
-            }           
-            
+            }
+
+            //Debug.Log("Cat detected");
             hasTriggered = true;
         }
     }
