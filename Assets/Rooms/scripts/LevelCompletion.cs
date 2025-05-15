@@ -1,26 +1,24 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelCompletion : MonoBehaviour
 {
-    // 引用到显示关卡完成信息的 Canvas 或者UI对象
-    public GameObject levelCompleteUI;  
-    
-    // 在开始时隐藏UI
+    [Header("Continue Button")]
+    public Button continueButton;
+
     void Start()
     {
-        // 确保UI一开始是隐藏的
-        if(levelCompleteUI != null)
-            levelCompleteUI.SetActive(false);
+        // Ensure the button is non-interactable at the start
+        if (continueButton != null)
+            continueButton.interactable = false;
     }
 
-    // 模拟关卡完成的条件，比如外部调用此方法
+    // Call this when the level or puzzle is completed
     public void OnLevelCompleted()
     {
-        Debug.Log("准备激活UI元素");
-        
-        // 直接激活UI对象，不再重新定位
-        if(levelCompleteUI != null)
-            levelCompleteUI.SetActive(true);
-        Debug.Log("UI元素已激活");
+        Debug.Log("Level completed. Enabling continue button.");
+
+        if (continueButton != null)
+            continueButton.interactable = true;
     }
 }
