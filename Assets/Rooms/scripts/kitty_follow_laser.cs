@@ -9,7 +9,7 @@ public class KittyFollowLaser : MonoBehaviour
     
     public float followSpeed = 1.0f; // 显著增加默认速度
     public float stopDistance = 0.5f; // 到达目标点的停止距离
-    private bool shouldFollow = true; // 默认设置为true，让猫咪自动跟随
+    private bool shouldFollow = false; // 默认设置为false，不让猫咪自动跟随
     
     // 动画参数名称
     private readonly string walkAnimParam = "IsWalking";
@@ -38,11 +38,6 @@ public class KittyFollowLaser : MonoBehaviour
         if (laserPointer == null)
         {
             Debug.LogWarning("未指定激光指示器，请在Inspector中设置laserPointer引用！");
-        }
-        else
-        {
-            // 自动开始跟随
-            StartFollowing();
         }
     }
 
@@ -152,6 +147,6 @@ public class KittyFollowLaser : MonoBehaviour
         }
         shouldFollow = true;
         soundTimer = soundInterval; // 设置计时器，使猫咪开始跟随时立即发出叫声
-        // Debug.Log("Kitty开始跟随激光点！");
+        Debug.Log("Kitty开始跟随激光点！");
     }
 }
