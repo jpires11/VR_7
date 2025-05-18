@@ -20,7 +20,7 @@ public class CharacterSwitchManager : MonoBehaviour
     public float holdDuration = 2.0f;
 
     [Header("Fade Settings")]
-    public FadeScreen fadeScreen; // Assign your fade screen object
+    public FadeScreen fadeScreen;
     public float fadeDelay = 0.1f;
 
     [Header("Scaling")]
@@ -167,7 +167,7 @@ public class CharacterSwitchManager : MonoBehaviour
         // Enable/disable scripts based on new state
         humanCharacter.GetComponent<HumanController>().enabled = isHuman;
         catCharacter.GetComponent<CatController>().enabled = !isHuman;
-        //catCharacter.GetComponent<CatJump>().enabled = !isHuman;
+        xrOrigin.GetComponent<CatJumpController>().enabled = !isHuman;
 
         var moveProvider = xrOrigin.GetComponentInChildren<DynamicMoveProvider>();
         if (moveProvider != null)
