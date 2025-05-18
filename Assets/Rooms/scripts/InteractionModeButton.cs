@@ -33,8 +33,11 @@ public class InteractionModeButton : MonoBehaviour
     
     private void OnButtonPressed(SelectEnterEventArgs args)
     {
+        Debug.Log("按钮被按下！");
+        
         if (interactionManager != null)
         {
+            Debug.Log("调用 ToggleInteractionMode");
             interactionManager.ToggleInteractionMode();
         }
         else
