@@ -7,15 +7,15 @@ public class InteractionModeManager : MonoBehaviour
     [SerializeField] private UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor rightRayInteractor;
     [SerializeField] private UnityEngine.XR.Interaction.Toolkit.Interactors.XRDirectInteractor leftDirectInteractor;
     [SerializeField] private UnityEngine.XR.Interaction.Toolkit.Interactors.XRDirectInteractor rightDirectInteractor;
-    [SerializeField] private KittyFollowLaser kittyFollowLaser; // 新增：引用猫咪跟随激光脚本
+    [SerializeField] private KittyFollowLaser kittyFollowLaser; 
     
     private bool laserInteractionEnabled = false;
-    private bool isEnabled = false; // 系统是否启用的标志
-    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable interactable; // 新增：按钮交互组件
+    private bool isEnabled = false; // Flag indicating if the system is enabled
+    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable interactable; 
     
     private void Awake()
     {
-        // 获取或添加交互组件
+        // Get or add interaction component
         interactable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable>();
         
         if (interactable == null)
@@ -23,7 +23,7 @@ public class InteractionModeManager : MonoBehaviour
             interactable = gameObject.AddComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable>();
         }
         
-        // 如果没有指定猫咪跟随激光脚本，尝试在场景中查找
+        // If kitty follow laser script is not specified, try to find it in the scene
         if (kittyFollowLaser == null)
         {
             kittyFollowLaser = FindObjectOfType<KittyFollowLaser>();
@@ -32,13 +32,13 @@ public class InteractionModeManager : MonoBehaviour
     
     private void Start()
     {
-        // 默认设置：禁用所有交互器，直到按钮被按下
+        // Default setting: disable all interactors until button is pressed
         DisableAllInteractors();
     }
     
     private void OnEnable()
     {
-        // 注册按钮事件
+        // Register button events
         if (interactable != null)
         {
             interactable.selectEntered.AddListener(OnButtonPressed);
@@ -47,53 +47,52 @@ public class InteractionModeManager : MonoBehaviour
     
     private void OnDisable()
     {
-        // 移除按钮事件
+        // Remove button events
         if (interactable != null)
         {
             interactable.selectEntered.RemoveListener(OnButtonPressed);
         }
     }
     
-    // 新增：按钮按下事件处理
     private void OnButtonPressed(SelectEnterEventArgs args)
     {
-        Debug.Log("按钮被按下！");
+        Debug.Log("Button pressed!");
         
-        // 切换交互模式
+        // Toggle interaction mode
         ToggleInteractionMode();
         
-        // 启用猫咪跟随激光功能
+        // Enable kitty follow laser functionality
         if (kittyFollowLaser != null)
         {
-            Debug.Log("启用猫咪跟随激光功能");
+            Debug.Log("Enable kitty follow laser functionality");
             kittyFollowLaser.StartFollowing();
         }
         else
         {
-            Debug.LogWarning("未找到猫咪跟随激光脚本！");
+            Debug.LogWarning("Kitty follow laser script not found!");
         }
     }
 
     public void OnUnityButtonClick()
     {
-        Debug.Log("Unity按钮被点击！");
+        Debug.Log("Unity button clicked!");
         
-        // 切换交互模式
+        // Toggle interaction mode
         ToggleInteractionMode();
         
-        // 启用猫咪跟随激光功能
+        // Enable kitty follow laser functionality
         if (kittyFollowLaser != null)
         {
-            Debug.Log("启用猫咪跟随激光功能");
+            Debug.Log("Enable kitty follow laser functionality");
             kittyFollowLaser.StartFollowing();
         }
         else
         {
-            Debug.LogWarning("未找到猫咪跟随激光脚本！");
+            Debug.LogWarning("Kitty follow laser script not found!");
         }
     }
     
-    // 禁用所有交互器的方法
+    // Method to disable all interactors
     private void DisableAllInteractors()
     {
         if (leftDirectInteractor != null) leftDirectInteractor.enabled = false;
@@ -101,24 +100,24 @@ public class InteractionModeManager : MonoBehaviour
         if (leftRayInteractor != null) leftRayInteractor.enabled = false;
         if (rightRayInteractor != null) rightRayInteractor.enabled = false;
         
-        Debug.Log("所有交互器已禁用，等待按钮激活");
+        Debug.Log("All interactors disabled, waiting for button activation");
     }
     
-    // 启用系统的方法
+    // Method to enable the system
     public void EnableSystem()
     {
         if (!isEnabled)
         {
             isEnabled = true;
-            // 默认设置为近距离交互模式
+            // Default set to near interaction mode
             SetNearFarInteractionOnly();
-            Debug.Log("交互系统已启用");
+            Debug.Log("Interaction system enabled");
         }
     }
     
     public void ToggleInteractionMode()
     {
-        // 只有在系统启用后才能切换模式
+        // Can only switch modes after system is enabled
         if (!isEnabled)
         {
             EnableSystem();
@@ -139,27 +138,27 @@ public class InteractionModeManager : MonoBehaviour
     
     private void SetNearFarInteractionOnly()
     {
-        // 启用近距离交互器
+        // Enable near interaction interactors
         if (leftDirectInteractor != null) leftDirectInteractor.enabled = true;
         if (rightDirectInteractor != null) rightDirectInteractor.enabled = true;
         
-        // 禁用激光交互器
+        // Disable laser interactors
         if (leftRayInteractor != null) leftRayInteractor.enabled = false;
         if (rightRayInteractor != null) rightRayInteractor.enabled = false;
         
-        Debug.Log("已切换到近距离交互模式");
+        Debug.Log("Switched to near interaction mode");
     }
     
     private void EnableLaserInteraction()
     {
-        // 保持近距离交互器启用
+        // Keep near interaction interactors enabled
         if (leftDirectInteractor != null) leftDirectInteractor.enabled = true;
         if (rightDirectInteractor != null) rightDirectInteractor.enabled = true;
         
-        // 同时启用激光交互器
+        // Also enable laser interactors
         if (leftRayInteractor != null) leftRayInteractor.enabled = true;
         if (rightRayInteractor != null) rightRayInteractor.enabled = true;
         
-        Debug.Log("已启用激光交互模式");
+        Debug.Log("Laser interaction mode enabled");
     }
 }

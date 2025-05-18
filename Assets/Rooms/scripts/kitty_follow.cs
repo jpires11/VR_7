@@ -3,28 +3,28 @@ using UnityEngine.XR;
 
 public class KittyFollowPlayer : MonoBehaviour
 {
-    // 可以不需要手动指定player，自动获取
+    // Player transform can be automatically obtained without manual assignment
     private Transform playerTransform;
-    public float followSpeed = 0.0001f; // 降低默认速度
+    public float followSpeed = 0.0001f; // Reduced default speed
     public float stopDistance = 1f;
     private bool shouldFollow = false;
     
-    // 动画参数名称
+    // Animation parameter name
     private readonly string walkAnimParam = "IsWalking";
-    // 直接引用Animator组件
+    // Direct reference to Animator component
     public Animator kittyAnimator;
     
-    // 添加音频相关变量
+    // Audio related variables
     private AudioSource catMeowAudio;
     private float soundTimer = 0f;
-    public float soundInterval = 10f; // 音频播放间隔，默认10秒
+    public float soundInterval = 10f; // Audio play interval, default 10 seconds
 
     private void Start()
     {
-        // 尝试获取主摄像机作为玩家位置参考
+        // Try to get main camera as player position reference
         playerTransform = Camera.main.transform;
         
-        // 如果找不到主摄像机，尝试查找XR原点
+        // If main camera not found, try to find XR origin
         if (playerTransform == null)
         {
             var xrOrigin = FindObjectOfType<Unity.XR.CoreUtils.XROrigin>();
@@ -34,7 +34,7 @@ public class KittyFollowPlayer : MonoBehaviour
             }
         }
         
-        // 获取猫叫声音频源
+        // Get cat meow audio source
         catMeowAudio = transform.Find("cat_meow")?.GetComponent<AudioSource>();
         if (catMeowAudio == null)
         {
@@ -46,41 +46,41 @@ public class KittyFollowPlayer : MonoBehaviour
     {
         if (shouldFollow && playerTransform != null)
         {
-            // 更新音频计时器
+            // Update audio timer
             soundTimer += Time.deltaTime;
             
-            // 每隔指定时间播放一次猫叫声
+            // Play meow sound at specified intervals
             if (soundTimer >= soundInterval && catMeowAudio != null)
             {
                 catMeowAudio.Play();
-                soundTimer = 0f; // 重置计时器
+                soundTimer = 0f; // Reset timer
             }
             
-            // 计算与玩家的距离
+            // Calculate distance to player
             float distance = Vector3.Distance(transform.position, playerTransform.position);
 
-            // 如果距离大于停止距离，则移动并播放行走动画
+            // If distance is greater than stop distance, move and play walking animation
             if (distance > stopDistance)
             {
-                // 设置动画状态为行走
+                // Set animation state to walking
                 if (kittyAnimator != null)
                 {
                     kittyAnimator.SetBool(walkAnimParam, true);
                 }
                 
                 Vector3 direction = (playerTransform.position - transform.position).normalized;
-                // 只在水平方向上移动（可选）
+                // Only move in horizontal direction (optional)
                 direction.y = 0;
                 direction = direction.normalized;
                 
                 transform.position += direction * followSpeed * Time.deltaTime;
                 
-                // 让Kitty朝向玩家
+                // Make Kitty face the player
                 transform.LookAt(new Vector3(playerTransform.position.x, transform.position.y, playerTransform.position.z));
             }
             else
             {
-                // 停止行走动画
+                // Stop walking animation
                 if (kittyAnimator != null)
                 {
                     kittyAnimator.SetBool(walkAnimParam, false);
@@ -89,7 +89,7 @@ public class KittyFollowPlayer : MonoBehaviour
         }
         else
         {
-            // 确保不跟随时不播放行走动画
+            // Ensure walking animation is not playing when not following
             if (kittyAnimator != null)
             {
                 kittyAnimator.SetBool(walkAnimParam, false);
@@ -101,11 +101,11 @@ public class KittyFollowPlayer : MonoBehaviour
     {
         if (playerTransform == null)
         {
-            Debug.LogError("无法找到玩家位置参考点！");
+            Debug.LogError("Cannot find player position reference!");
             return;
         }
         shouldFollow = true;
-        soundTimer = soundInterval; // 设置计时器，使猫咪开始跟随时立即发出叫声
-        Debug.Log("Kitty开始跟随玩家！");
+        soundTimer = soundInterval; // Set timer to make kitty meow immediately when starting to follow
+        Debug.Log("Kitty starts following player!");
     }
 }

@@ -3,110 +3,110 @@ using UnityEngine.XR;
 
 public class KittyFollowLaser : MonoBehaviour
 {
-    // 激光指示器相关
-    public Transform laserPointer; // 激光指示器的Transform
-    private Vector3 targetPosition; // 激光指向的目标位置
+    // Laser pointer related
+    public Transform laserPointer; // Transform of the laser pointer
+    private Vector3 targetPosition; // Target position pointed by laser
     
-    public float followSpeed = 1.0f; // 显著增加默认速度
-    public float stopDistance = 0.5f; // 到达目标点的停止距离
-    private bool shouldFollow = false; // 默认设置为false，不让猫咪自动跟随
+    public float followSpeed = 1.0f; // Significantly increase default speed
+    public float stopDistance = 0.5f; // Stop distance when reaching target point
+    private bool shouldFollow = false; // Default set to false, prevent kitty from auto-following
     
-    // 动画参数名称
+    // Animation parameter name
     private readonly string walkAnimParam = "IsWalking";
-    // 直接引用Animator组件
+    // Direct reference to Animator component
     public Animator kittyAnimator;
     
-    // 添加音频相关变量
+    // Add audio related variables
     private AudioSource catMeowAudio;
     private float soundTimer = 0f;
-    public float soundInterval = 10f; // 音频播放间隔，默认10秒
+    public float soundInterval = 10f; // Audio play interval, default 10 seconds
     
-    // 添加调试变量
+    // Add debug variables
     private float debugTimer = 0f;
-    public float debugInterval = 1f; // 每秒打印一次位置信息
+    public float debugInterval = 1f; // Print position info every second
 
     private void Start()
     {
-        // 尝试获取猫叫声音频源
+        // Try to get cat meow audio source
         catMeowAudio = transform.Find("cat_meow")?.GetComponent<AudioSource>();
         if (catMeowAudio == null)
         {
             catMeowAudio = GetComponent<AudioSource>();
         }
         
-        // 注意：不再使用标签查找，需要在Inspector中手动指定laserPointer
+        // Note: No longer using tag search, need to manually specify laserPointer in Inspector
         if (laserPointer == null)
         {
-            Debug.LogWarning("未指定激光指示器，请在Inspector中设置laserPointer引用！");
+            Debug.LogWarning("Laser pointer not specified, please set laserPointer reference in Inspector!");
         }
     }
 
     private void Update()
     {
-        // 调试输出激光位置信息
+        // Debug output laser position info
         debugTimer += Time.deltaTime;
         if (debugTimer >= debugInterval && laserPointer != null)
         {
-            UpdateLaserTargetPosition(); // 更新目标位置
-            // Debug.Log($"激光指向位置: {targetPosition}, 猫咪位置: {transform.position}, 距离: {Vector3.Distance(transform.position, targetPosition)}, 是否跟随: {shouldFollow}");
+            UpdateLaserTargetPosition(); // Update target position
+            // Debug.Log($"Laser pointing position: {targetPosition}, Kitty position: {transform.position}, Distance: {Vector3.Distance(transform.position, targetPosition)}, Following: {shouldFollow}");
             debugTimer = 0f;
         }
         
         if (shouldFollow && laserPointer != null)
         {
-            // 更新目标位置 - 使用射线检测获取激光指向的位置
+            // Update target position - use raycast to get laser pointing position
             UpdateLaserTargetPosition();
             
-            // 更新音频计时器
+            // Update audio timer
             soundTimer += Time.deltaTime;
             
-            // 每隔指定时间播放一次猫叫声
+            // Play cat meow sound at specified intervals
             if (soundTimer >= soundInterval && catMeowAudio != null)
             {
                 catMeowAudio.Play();
-                soundTimer = 0f; // 重置计时器
+                soundTimer = 0f; // Reset timer
             }
             
-            // 计算与目标位置的距离
+            // Calculate distance to target position
             float distance = Vector3.Distance(transform.position, targetPosition);
 
-            // 如果距离大于停止距离，则移动并播放行走动画
+            // If distance is greater than stop distance, move and play walking animation
             if (distance > stopDistance)
             {
-                // 设置动画状态为行走
+                // Set animation state to walking
                 if (kittyAnimator != null)
                 {
                     kittyAnimator.SetBool(walkAnimParam, true);
                 }
                 
                 Vector3 direction = (targetPosition - transform.position).normalized;
-                // 只在水平方向上移动
+                // Only move in horizontal direction
                 direction.y = 0;
                 direction = direction.normalized;
                 
-                // 使用更明显的移动速度
+                // Use more noticeable movement speed
                 float moveStep = followSpeed * Time.deltaTime;
                 transform.position += direction * moveStep;
                 
-                // 让Kitty朝向目标位置
+                // Make Kitty face target position
                 transform.LookAt(new Vector3(targetPosition.x, transform.position.y, targetPosition.z));
                 
-                // 添加调试输出
-                // Debug.Log($"猫咪正在移动! 方向: {direction}, 步长: {moveStep}, 新位置: {transform.position}");
+                // Add debug output
+                // Debug.Log($"Kitty is moving! Direction: {direction}, Step: {moveStep}, New position: {transform.position}");
             }
             else
             {
-                // 停止行走动画
+                // Stop walking animation
                 if (kittyAnimator != null)
                 {
                     kittyAnimator.SetBool(walkAnimParam, false);
                 }
-                // Debug.Log("猫咪已到达目标位置，停止移动");
+                // Debug.Log("Kitty reached target position, stopping movement");
             }
         }
         else
         {
-            // 确保不跟随时不播放行走动画
+            // Ensure walking animation is not playing when not following
             if (kittyAnimator != null)
             {
                 kittyAnimator.SetBool(walkAnimParam, false);
@@ -114,7 +114,7 @@ public class KittyFollowLaser : MonoBehaviour
         }
     }
     
-    // 更新激光指向的目标位置
+    // Update laser pointing target position
     private void UpdateLaserTargetPosition()
     {
         if (laserPointer != null)
@@ -122,18 +122,18 @@ public class KittyFollowLaser : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(laserPointer.position, laserPointer.forward, out hit))
             {
-                // 激光击中了物体，使用击中点作为目标
+                // Laser hit object, use hit point as target
                 targetPosition = hit.point;
-                // Debug.Log($"激光射线击中: {hit.collider.name}, 位置: {hit.point}");
+                // Debug.Log($"Laser ray hit: {hit.collider.name}, Position: {hit.point}");
             }
             else
             {
-                // 激光没有击中物体，使用一个远处的点作为目标
+                // Laser didn't hit object, use a far point as target
                 targetPosition = laserPointer.position + laserPointer.forward * 100f;
-                // Debug.Log("激光射线未击中任何物体，使用远处点");
+                // Debug.Log("Laser ray didn't hit any object, using far point");
             }
             
-            // 确保目标位置在地面上（可选）
+            // Ensure target position is on ground (optional)
             targetPosition.y = transform.position.y;
         }
     }
@@ -142,11 +142,11 @@ public class KittyFollowLaser : MonoBehaviour
     {
         if (laserPointer == null)
         {
-            // Debug.LogError("无法找到激光指示器！");
+            // Debug.LogError("Cannot find laser pointer!");
             return;
         }
         shouldFollow = true;
-        soundTimer = soundInterval; // 设置计时器，使猫咪开始跟随时立即发出叫声
-        Debug.Log("Kitty开始跟随激光点！");
+        soundTimer = soundInterval; // Set timer to make kitty meow immediately when starting to follow
+        Debug.Log("Kitty starts following laser point!");
     }
 }

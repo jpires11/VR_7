@@ -8,26 +8,26 @@ public class Plate : MonoBehaviour
     private Color originalColor;
     private bool hasBeenTouched = false;
     
-    // 静态变量用于跟踪已触碰的盘子数量和总盘子数量
+    // Static variables to track the number of touched plates and total plates
     private static int touchedPlatesCount = 0;
     private static int totalPlates = 3;
     
-    // 引用LevelCompletion脚本
+    // Reference to LevelCompletion script
     private LevelCompletion levelCompletion;
     
-    // 添加公共变量用于在Inspector中拖拽赋值
+    // Public variables for drag and drop assignment in Inspector
     public GameObject levelManager;
     public GameObject fishbone;
     
-    // 添加随机移动相关变量
-    public float moveSpeed = 0.2f;         // 移动速度
-    public float maxMoveDistance = 0.5f;   // 最大移动距离
-    private Vector3 originalPosition;       // 原始位置
-    private Vector3 targetPosition;         // 目标位置
-    private float moveTimer;                // 移动计时器
-    private float moveInterval = 3.0f;      // 更换移动目标的时间间隔
+    // Variables for random movement
+    public float moveSpeed = 0.2f;         // Movement speed
+    public float maxMoveDistance = 0.5f;   // Maximum movement distance
+    private Vector3 originalPosition;       // Original position
+    private Vector3 targetPosition;         // Target position
+    private float moveTimer;                // Movement timer
+    private float moveInterval = 3.0f;      // Interval for changing movement target
     
-    // 在开始时获取渲染器组件并保存原始颜色
+    // Get renderer component and save original color at start
     void Start()
     {
         objectRenderer = GetComponent<Renderer>();
@@ -37,7 +37,7 @@ public class Plate : MonoBehaviour
         }
         else
         {
-            Debug.LogError("没有找到Renderer组件，请确保该脚本附加到有Renderer组件的物体上");
+            Debug.LogError("Renderer component not found, please ensure this script is attached to an object with a Renderer component");
         }
         
         if (levelManager != null)
@@ -45,12 +45,12 @@ public class Plate : MonoBehaviour
             levelCompletion = levelManager.GetComponent<LevelCompletion>();
             if (levelCompletion == null)
             {
-                Debug.LogWarning("LevelManager上没有找到LevelCompletion脚本");
+                Debug.LogWarning("LevelCompletion script not found on LevelManager");
             }
         }
         else
         {
-            Debug.LogWarning("场景中没有找到LevelManager对象");
+            Debug.LogWarning("LevelManager object not found in scene");
         }
         if (fishbone != null)
         {
@@ -58,32 +58,32 @@ public class Plate : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("没有找到fishbone对象，请在Inspector中设置");
+            Debug.LogWarning("Fishbone object not found, please set it in Inspector");
         }
         
-        // 初始化随机移动
+        // Initialize random movement
         originalPosition = transform.position;
         SetNewRandomTarget();
     }
     
-    // 添加Update方法用于处理随机移动
+    // Add Update method for handling random movement
     void Update()
     {
-        // 处理随机移动
+        // Handle random movement
         moveTimer -= Time.deltaTime;
         if (moveTimer <= 0)
         {
             SetNewRandomTarget();
         }
         
-        // 平滑移动到目标位置
+        // Smoothly move to target position
         transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
     }
     
-    // 设置新的随机目标位置
+    // Set new random target position
     private void SetNewRandomTarget()
     {
-        // 在原始位置周围生成一个随机点
+        // Generate a random point around the original position
         Vector3 randomOffset = new Vector3(
             Random.Range(-maxMoveDistance, maxMoveDistance),
             Random.Range(-maxMoveDistance, maxMoveDistance),
@@ -94,7 +94,7 @@ public class Plate : MonoBehaviour
         moveTimer = moveInterval;
     }
     
-    // 当发生碰撞时调用
+    // Called when collision occurs
     private void OnCollisionEnter(Collision collision)
     {
         if (!hasBeenTouched)
@@ -103,7 +103,7 @@ public class Plate : MonoBehaviour
         }
     }
     
-    // 当触发器碰撞时调用（如果使用的是触发器而非碰撞体）
+    // Called when trigger collision occurs (if using triggers instead of colliders)
     private void OnTriggerEnter(Collider other)
     {
         if (!hasBeenTouched)
@@ -112,58 +112,58 @@ public class Plate : MonoBehaviour
         }
     }
     
-    // 改变颜色为黄色的方法
+    // Method to change color to yellow
     private void ChangeColorToYellow()
     {
         if (objectRenderer != null)
         {
             objectRenderer.material.color = Color.yellow;
             
-            // 标记为已触碰并增加计数
+            // Mark as touched and increment counter
             hasBeenTouched = true;
             touchedPlatesCount++;
             
-            // Debug.Log("盘子被触碰，当前已触碰: " + touchedPlatesCount + "/" + totalPlates);
+            // Debug.Log("Plate touched, current count: " + touchedPlatesCount + "/" + totalPlates);
             
-            // 当盘子被触碰时，隐藏fishbone
+            // Hide fishbone when plate is touched
             if (fishbone != null)
             {
                 fishbone.SetActive(false);
             }
             
-            // 检查是否所有盘子都被触碰
+            // Check if all plates have been touched
             CheckAllPlatesCompleted();
         }
     }
     
-    // 检查是否所有盘子都被触碰
+    // Check if all plates have been touched
     private void CheckAllPlatesCompleted()
     {
         if (touchedPlatesCount >= totalPlates)
         {
-            // 触发关卡完成事件
+            // Trigger level completion event
             if (levelCompletion != null)
             {
-                // Debug.Log("所有盘子都已触碰！触发完成事件");
+                // Debug.Log("All plates have been touched! Triggering completion event");
                 levelCompletion.OnLevelCompleted();
             }
         }
     }
     
-    // 可选：添加一个恢复原始颜色的方法
+    // Optional: Method to restore original color
     public void ResetColor()
     {
         if (objectRenderer != null)
         {
             objectRenderer.material.color = originalColor;
             
-            // 如果之前已触碰，则减少计数
+            // If previously touched, decrement counter
             if (hasBeenTouched)
             {
                 hasBeenTouched = false;
                 touchedPlatesCount--;
                 
-                // 重置时，让fishbone重新可见
+                // Make fishbone visible again on reset
                 if (fishbone != null)
                 {
                     fishbone.SetActive(true);
@@ -172,10 +172,10 @@ public class Plate : MonoBehaviour
         }
     }
     
-    // 当场景重新加载或游戏重启时重置静态计数器
+    // Reset static counter when scene reloads or game restarts
     private void OnDestroy()
     {
-        // 重置静态变量，防止在场景重新加载时计数器保持旧值
+        // Reset static variable to prevent counter from keeping old value when scene reloads
         touchedPlatesCount = 0;
     }
 }
