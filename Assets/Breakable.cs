@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Breakable : MonoBehaviour
 {
     public List<GameObject> breakablePieces;
     public RemoteBreakable secondaryBreakable;
+    public UnityEvent OnBreak;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,6 +28,7 @@ public class Breakable : MonoBehaviour
         }
        
         //  Debug.Log("Vase Broke");
+        OnBreak.Invoke();
         gameObject.SetActive(false);
 
         if (secondaryBreakable != null)

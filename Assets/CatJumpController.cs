@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.InputSystem;
-using static UnityEngine.XR.CommonUsages;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Climbing;
 
 [RequireComponent(typeof(InputData))]
 public class CatJumpController : MonoBehaviour
@@ -19,6 +19,7 @@ public class CatJumpController : MonoBehaviour
 
     [Header("References")]
     public CharacterController cc;
+    public ClimbProvider climbProvider; //
 
     private InputData _inputData;
     private float gravity = -7f;
@@ -35,6 +36,9 @@ public class CatJumpController : MonoBehaviour
     private void Update()
     {
         if (!enabled || !cc.enabled)
+            return;
+
+        if (climbProvider != null && climbProvider.isLocomotionActive)
             return;
 
         bool isGrounded = IsGrounded();

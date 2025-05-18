@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class VentKeyTrigger : MonoBehaviour
 {
     //public string targetTag;
     public GameObject keyCat;
     public GameObject keyPlayer;
+    public UnityEvent OnTrigger;
 
     private bool hasTriggered = false;
 
@@ -30,6 +32,7 @@ public class VentKeyTrigger : MonoBehaviour
             }
 
             //Debug.Log("Cat detected");
+            OnTrigger.Invoke();
             hasTriggered = true;
         }
     }

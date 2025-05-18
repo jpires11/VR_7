@@ -114,7 +114,7 @@ public class CharacterSwitchManager : MonoBehaviour
         if (fadeScreen != null)
         {
             fadeScreen.FadeIn();
-            yield return new WaitForSeconds(fadeScreen.fadeDuration);
+            yield return new WaitForSeconds(fadeScreen.fadeDuration + fadeDelay);
         }
 
         // Play meow if switching to cat
