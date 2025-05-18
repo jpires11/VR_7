@@ -85,5 +85,7 @@ To be able to get the PDF document from the .rmd file some installations are nee
 
 | File/Asset                     | Type       | Notes                                           |
 |-------------------------------|------------|-------------------------------------------------|
-| `FILE`     | 🟡 Adapted  |   NOTES    |
+| `cybersickeness.cs`     | 🟡 Adapted  |   NOTES    | Added simple script to turn off tunneling vignette, followed tuto from [[source](https://www.youtube.com/watch?v=9Q6mEmZEoa4)](#)   
+
+
 </details>
