@@ -67,7 +67,11 @@ To be able to get the PDF document from the .rmd file some installations are nee
 | `Assets/Rooms/scripts/memory.cs`     | 🟢 Produced| Implementation of specific order of material on a object used as a clue   |
 | `Assets/Rooms/scripts/ScreenMaterialSquence.cs`     | 🟢 Produced| Implementation of specific order of texture on a specific material of an object used as a clue   |
 | `Assets/Rooms/scripts/ButtonSquenceManager.cs`     | 🟢 Produced| Implementation of specific order at which button need to be pressed to solve puzzle   |
-| `Assets/Rooms/scripts/LevelCompletion.cs`     | TYPE| NOTES   |
+| `Assets/Rooms/scripts/LevelCompletion.cs`     | 🟢 Produced| Trigger when the level or puzzle is completed   |
+| `Assets/Rooms/scripts/socket1/2/3.cs`     | 🟢 Produced| The socket can only connect with the assigned specific character to solve the puzzle. Once completed, it will trigger the cage to open |
+| `Assets/Rooms/scripts/cage_interaction.cs`     | 🟢 Produced| Once triggered, play the cage opening animation |
+| `Assets/Rooms/scripts/InteractionModeManager.cs`     | 🟢 Produced| Click to switch between Near-Far Interaction mode and Laser mode. In Near-Far Interaction mode, the cat will not follow. In Laser mode, the cat will automatically follow the laser pointer |
+| `Assets/Rooms/scripts/plate.cs`     | 🟢 Produced| "Control the plates and fishbones to move slowly and randomly around a central point in the water. When the cat touches a plate, the fishbone on it will be eaten. |
 </details>
 
 <details>
@@ -75,8 +79,10 @@ To be able to get the PDF document from the .rmd file some installations are nee
 
 | File/Asset                     | Type       | Notes                                           |
 |-------------------------------|------------|-------------------------------------------------|
-| `Assets/Rooms/scripts/kitty_follow.cs`     | 🟢 Produced |   NOTES    |
+| `Assets/Rooms/scripts/kitty_follow.cs`     | 🟢 Produced |  After being freed from the container, the cat will automatically follow the player.    |
+| `Assets/Rooms/scripts/kitty_follow_laser.cs`     | 🟢 Produced |  Control the cat to automatically follow the laser pointer in Laser Mode.    |
 | `Assets/Rooms/scripts/cat_detector.cs`     | 🟢 Produced |  When player hold the cat close enough to the right clue cat purr and controller vibrates    |
+| `Assets/Rooms/scripts/after_grad.cs`     | 🟢 Produced |  When player grab the cat it will meow    |
 
 | `PET CAR`   | TYPE |NOTES        |
 </details>
