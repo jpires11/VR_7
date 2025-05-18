@@ -4,10 +4,10 @@ using System.Collections;
 
 public class collide_hide : MonoBehaviour
 {
-    // 可选：设置碰撞后隐藏的延迟时间
+    // Optional: Set delay time before hiding after collision
     [SerializeField] private float hideDelay = 0.0f;
     
-    // 可选：指定哪些标签的物体可以触发隐藏
+    // Optional: Specify which tags can trigger hiding
     [SerializeField] private string[] triggerTags;
     
     private MeshRenderer meshRenderer;
@@ -15,25 +15,25 @@ public class collide_hide : MonoBehaviour
     
     private void Start()
     {
-        // 获取物体的MeshRenderer组件
+        // Get the MeshRenderer component
         meshRenderer = GetComponent<MeshRenderer>();
         
-        // 获取物体的碰撞器组件
+        // Get the collider component
         objectCollider = GetComponent<Collider>();
         
-        // 确保物体有碰撞器
+        // Ensure the object has a collider
         if (objectCollider == null)
         {
-            Debug.LogWarning("物体没有碰撞器组件，碰撞检测将无法工作！");
+            Debug.LogWarning("Object has no collider component, collision detection will not work!");
         }
     }
     
     private void OnCollisionEnter(Collision collision)
     {
-        // 检查碰撞物体是否有Box Collider
+        // Check if collision object has Box Collider
         if (collision.collider is BoxCollider)
         {
-            // 如果设置了触发标签，则检查碰撞物体的标签
+            // If trigger tags are set, check collision object's tag
             if (triggerTags != null && triggerTags.Length > 0)
             {
                 bool tagMatch = false;
@@ -47,29 +47,29 @@ public class collide_hide : MonoBehaviour
                 }
                 
                 if (!tagMatch)
-                    return; // 如果没有匹配的标签，则不隐藏
+                    return; // If no matching tag, don't hide
             }
             
-            // 如果有延迟，则使用协程
+            // If there's a delay, use coroutine
             if (hideDelay > 0)
             {
                 StartCoroutine(HideAfterDelay());
             }
             else
             {
-                // 立即隐藏物体
+                // Hide object immediately
                 HideObject();
             }
         }
     }
     
-    // 用于触发器碰撞的方法
+    // Method for trigger collision
     private void OnTriggerEnter(Collider other)
     {
-        // 检查碰撞物体是否有Box Collider
+        // Check if collision object has Box Collider
         if (other is BoxCollider)
         {
-            // 如果设置了触发标签，则检查碰撞物体的标签
+            // If trigger tags are set, check collision object's tag
             if (triggerTags != null && triggerTags.Length > 0)
             {
                 bool tagMatch = false;
@@ -83,30 +83,30 @@ public class collide_hide : MonoBehaviour
                 }
                 
                 if (!tagMatch)
-                    return; // 如果没有匹配的标签，则不隐藏
+                    return; // If no matching tag, don't hide
             }
             
-            // 如果有延迟，则使用协程
+            // If there's a delay, use coroutine
             if (hideDelay > 0)
             {
                 StartCoroutine(HideAfterDelay());
             }
             else
             {
-                // 立即隐藏物体
+                // Hide object immediately
                 HideObject();
             }
         }
     }
     
-    // 延迟隐藏的协程
+    // Coroutine for delayed hiding
     private IEnumerator HideAfterDelay()
     {
         yield return new WaitForSeconds(hideDelay);
         HideObject();
     }
     
-    // 隐藏物体的方法
+    // Method to hide object
     private void HideObject()
     {
         if (meshRenderer != null)
@@ -114,7 +114,7 @@ public class collide_hide : MonoBehaviour
             meshRenderer.enabled = false;
         }
         
-        // 可选：也可以禁用碰撞器，防止进一步的碰撞
+        // Optional: Can also disable the collider to prevent further collisions
         // if (objectCollider != null)
         // {
         //     objectCollider.enabled = false;
