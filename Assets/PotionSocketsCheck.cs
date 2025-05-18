@@ -1,12 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class PotionSocketsCheck : MonoBehaviour
 {
     public List<UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor> sockets;
     private bool triggered = false;
-    public List<GameObject> plateforms;
+
+    // This event will be invoked when all sockets are filled
+    public UnityEvent<GameObject> OnEnterEvent;
 
     void OnEnable()
     {
@@ -41,9 +44,7 @@ public class PotionSocketsCheck : MonoBehaviour
 
     private void OnAllSocketsFilled()
     {
-        foreach (var piece in plateforms)
-        {
-            piece.SetActive(true);
-        }
+        // Invoke the UnityEvent and pass in the current GameObject or any relevant object
+        OnEnterEvent.Invoke(gameObject);
     }
 }
