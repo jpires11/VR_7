@@ -152,6 +152,7 @@ MonoBehaviour:
   rightRayInteractor: {fileID: 1139234129}
   leftDirectInteractor: {fileID: 193692718}
   rightDirectInteractor: {fileID: 0}
+  kittyFollowLaser: {fileID: 1354385932}
 --- !u!4 &51207712
 Transform:
   m_ObjectHideFlags: 0
@@ -2829,7 +2830,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1105588952}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 51207711}
+        m_TargetAssemblyTypeName: InteractionModeManager, Assembly-CSharp
+        m_MethodName: OnUnityButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: InteractionModeManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1105588952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2881,6 +2906,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionManager: {fileID: 51207711}
+  kittyFollowLaser: {fileID: 1354385932}
+  interactable: {fileID: 0}
 --- !u!1 &1139234124
 GameObject:
   m_ObjectHideFlags: 0
