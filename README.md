@@ -42,7 +42,8 @@ To be able to get the PDF document from the .rmd file some installations are nee
 
 | File/Asset                     | Type       | Notes                                           |
 |-------------------------------|------------|-------------------------------------------------|
-| `name file`     | 🔴 Unmodified | Free asset from [source](#)                  |
+| `Climbing,...`     | 🔴 Unmodified | Free asset from [source](#)                  |
+| `Rotation.cs`     | 🟡 Adapted | Button to change rotation type [[source](https://discussions.unity.com/t/vr-swapping-turn-provider-locomotion-provider-from-ui/951489)](#)|
 
 </details>
 <details>
@@ -63,7 +64,9 @@ To be able to get the PDF document from the .rmd file some installations are nee
 |-------------------------------|------------|-------------------------------------------------|
 | `Assets/Rooms/scripts/cage_puzzle.cs`         | 🟢 Produced |    NOTES          |
 | `Assets/Rooms/scripts/Skip_scene.cs`     | 🟢 Produced|  Button becomes interactable once puzzle is solve and skip to next scene    |
-| `Assets/Rooms/scripts/ButtonSquenceManager.cs`     | 🟢 Produced| Implementation of specific order at which button need to be pressed    |
+| `Assets/Rooms/scripts/memory.cs`     | 🟢 Produced| Implementation of specific order of material on a object used as a clue   |
+| `Assets/Rooms/scripts/ScreenMaterialSquence.cs`     | 🟢 Produced| Implementation of specific order of texture on a specific material of an object used as a clue   |
+| `Assets/Rooms/scripts/ButtonSquenceManager.cs`     | 🟢 Produced| Implementation of specific order at which button need to be pressed to solve puzzle   |
 | `Assets/Rooms/scripts/LevelCompletion.cs`     | TYPE| NOTES   |
 </details>
 
@@ -73,6 +76,7 @@ To be able to get the PDF document from the .rmd file some installations are nee
 | File/Asset                     | Type       | Notes                                           |
 |-------------------------------|------------|-------------------------------------------------|
 | `Assets/Rooms/scripts/kitty_follow.cs`     | 🟢 Produced |   NOTES    |
+| `Assets/Rooms/scripts/cat_detector.cs`     | 🟢 Produced |  When player hold the cat close enough to the right clue cat purr and controller vibrates    |
 
 | `PET CAR`   | TYPE |NOTES        |
 </details>
@@ -81,5 +85,7 @@ To be able to get the PDF document from the .rmd file some installations are nee
 
 | File/Asset                     | Type       | Notes                                           |
 |-------------------------------|------------|-------------------------------------------------|
-| `FILE`     | 🟡 Adapted  |   NOTES    |
+| `cybersickeness.cs`     | 🟡 Adapted  |   NOTES    | Added simple script to turn off tunneling vignette, followed tuto from [[source](https://www.youtube.com/watch?v=9Q6mEmZEoa4)](#)   
+
+
 </details>
