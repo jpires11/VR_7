@@ -19,6 +19,14 @@ public class Plate : MonoBehaviour
     public GameObject levelManager;
     public GameObject fishbone;
     
+    // 添加随机移动相关变量
+    public float moveSpeed = 0.2f;         // 移动速度
+    public float maxMoveDistance = 0.5f;   // 最大移动距离
+    private Vector3 originalPosition;       // 原始位置
+    private Vector3 targetPosition;         // 目标位置
+    private float moveTimer;                // 移动计时器
+    private float moveInterval = 3.0f;      // 更换移动目标的时间间隔
+    
     // 在开始时获取渲染器组件并保存原始颜色
     void Start()
     {
@@ -52,6 +60,38 @@ public class Plate : MonoBehaviour
         {
             Debug.LogWarning("没有找到fishbone对象，请在Inspector中设置");
         }
+        
+        // 初始化随机移动
+        originalPosition = transform.position;
+        SetNewRandomTarget();
+    }
+    
+    // 添加Update方法用于处理随机移动
+    void Update()
+    {
+        // 处理随机移动
+        moveTimer -= Time.deltaTime;
+        if (moveTimer <= 0)
+        {
+            SetNewRandomTarget();
+        }
+        
+        // 平滑移动到目标位置
+        transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+    }
+    
+    // 设置新的随机目标位置
+    private void SetNewRandomTarget()
+    {
+        // 在原始位置周围生成一个随机点
+        Vector3 randomOffset = new Vector3(
+            Random.Range(-maxMoveDistance, maxMoveDistance),
+            Random.Range(-maxMoveDistance, maxMoveDistance),
+            Random.Range(-maxMoveDistance, maxMoveDistance)
+        );
+        
+        targetPosition = originalPosition + randomOffset;
+        moveTimer = moveInterval;
     }
     
     // 当发生碰撞时调用
