@@ -9,7 +9,7 @@ public class KittyFollowLaser : MonoBehaviour
     
     public float followSpeed = 1.0f; // Significantly increase default speed
     public float stopDistance = 0.5f; // Stop distance when reaching target point
-    private bool shouldFollow = false; // Default set to false, prevent kitty from auto-following
+    private bool shouldFollow = true; 
     
     // Animation parameter name
     private readonly string walkAnimParam = "IsWalking";
