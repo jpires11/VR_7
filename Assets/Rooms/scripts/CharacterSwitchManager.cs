@@ -167,7 +167,7 @@ public class CharacterSwitchManager : MonoBehaviour
         // Enable/disable scripts based on new state
         humanCharacter.GetComponent<HumanController>().enabled = isHuman;
         catCharacter.GetComponent<CatController>().enabled = !isHuman;
-        xrOrigin.GetComponent<CatJumpController>().enabled = !isHuman;
+        xrOrigin.GetComponent<CatJumpControllerVignette>().enabled = !isHuman;
 
         var moveProvider = xrOrigin.GetComponentInChildren<DynamicMoveProvider>();
         if (moveProvider != null)
