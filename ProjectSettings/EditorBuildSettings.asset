@@ -21,10 +21,10 @@ EditorBuildSettings:
     path: Assets/Rooms/4 Room 3.unity
     guid: ad0f5cd56f058ac4387001c400c32273
   - enabled: 1
-    path: Assets/Rooms/Bordel de HQ/Sync Rooms/0 Sync Room Intro.unity
+    path: Assets/Rooms/Sync Rooms/0 Sync Room Intro.unity
     guid: a7a4b6474f04cfb468555a8b41193e74
   - enabled: 1
-    path: Assets/Rooms/Bordel de HQ/Sync Rooms/1 Sync Rooms.unity
+    path: Assets/Rooms/Sync Rooms/1 Sync Rooms.unity
     guid: 3f00040015d43334e9bdc04738594baf
   m_configObjects:
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 593bcd0afa2784cafafd8e66dc4b86f9,
