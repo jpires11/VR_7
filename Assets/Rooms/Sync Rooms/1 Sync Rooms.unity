@@ -31236,6 +31236,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2237867695909771640, guid: 78d2bcd488fdc0b4b804142b5cfc7b02,
+        type: 3}
+      propertyPath: m_TurnAmount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3879123900803122056, guid: 78d2bcd488fdc0b4b804142b5cfc7b02,
         type: 3}
       propertyPath: m_FarAttachMode
@@ -39589,7 +39594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c75daed9cbd71e4692bee836aa97cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 0.3
+  jumpHeight: 0.35
   jumpForwardSpeed: 2
   minControllersVelocity: 2
   groundlayers:
@@ -39611,7 +39616,7 @@ MonoBehaviour:
   cc: {fileID: 1760131829}
   climbProvider: {fileID: 1760131833}
   vignetteController: {fileID: 380777766}
-  vignetteApertureSize: 0.5
+  vignetteApertureSize: 0.725
   vignetteFeathering: 0.3
 --- !u!1001 &1768357502
 PrefabInstance:
@@ -45604,12 +45609,12 @@ PrefabInstance:
     - target: {fileID: 8429981633443581383, guid: 6c8af5c8012f01440af6cb2bc3eb987c,
         type: 3}
       propertyPath: m_DefaultParameters.m_ApertureSize
-      value: 0.6
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 8429981633443581383, guid: 6c8af5c8012f01440af6cb2bc3eb987c,
         type: 3}
       propertyPath: m_DefaultParameters.m_FeatheringEffect
-      value: 0.264
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8429981633443581383, guid: 6c8af5c8012f01440af6cb2bc3eb987c,
         type: 3}
