@@ -5,7 +5,13 @@ public class CatDetector : MonoBehaviour
 {
     [Header("Audio Clips")]
     public AudioClip meowClip;
+    [Range(0f, 1f)] public float meowVolume = 1f;
+
     public AudioClip purrClip;
+    [Range(0f, 1f)] public float purrVolume = 0.5f;
+
+    [Header("Audio Source")]
+    public AudioSource audioSource;
 
     [Header("Purr Settings")]
     public Transform targetObject;
@@ -15,7 +21,6 @@ public class CatDetector : MonoBehaviour
     public float hapticIntensity = 0.3f;
     public float hapticDuration = 0.1f;
 
-    private AudioSource audioSource;
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable;
     private UnityEngine.XR.Interaction.Toolkit.Interactors.XRBaseInputInteractor currentInteractor = null;
     private bool isPurring = false;
@@ -23,11 +28,14 @@ public class CatDetector : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
-            Debug.LogError("Missing AudioSource component on Cat.");
-            return;
+            audioSource = GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                Debug.LogError("Missing AudioSource component on Cat.");
+                return;
+            }
         }
 
         grabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
@@ -53,6 +61,7 @@ public class CatDetector : MonoBehaviour
             if (!isPurring && !audioSource.isPlaying)
             {
                 audioSource.clip = purrClip;
+                audioSource.volume = purrVolume;
                 audioSource.loop = true;
                 audioSource.Play();
                 isPurring = true;
@@ -87,9 +96,9 @@ public class CatDetector : MonoBehaviour
     {
         currentInteractor = args.interactorObject as UnityEngine.XR.Interaction.Toolkit.Interactors.XRBaseInputInteractor;
 
-        if (meowClip != null)
+        if (meowClip != null && audioSource != null)
         {
-            audioSource.PlayOneShot(meowClip);
+            audioSource.PlayOneShot(meowClip, meowVolume);
             Debug.Log("Cat grabbed, meow!");
         }
     }
