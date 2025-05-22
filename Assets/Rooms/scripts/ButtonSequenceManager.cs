@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class SimpleButtonTrigger : MonoBehaviour
 {
@@ -10,9 +11,15 @@ public class SimpleButtonTrigger : MonoBehaviour
     public Button continueButton;
 
     [Header("Audio Feedback")]
-    public AudioSource audioSource; // AudioSource to play the sounds
-    public AudioClip winSound;      // Sound to play when correct button is pressed
-    public AudioClip loseSound;     // Sound to play when incorrect button is pressed
+    public AudioSource audioSource;      // AudioSource to play the sounds
+    public AudioClip winSound;           // Sound to play when correct button is pressed
+    [Range(0f, 1f)] public float winSoundVolume = 1f;
+
+    public AudioClip loseSound;          // Sound to play when incorrect button is pressed
+    [Range(0f, 1f)] public float loseSoundVolume = 1f;
+
+    public AudioClip completionSound;    // New sound to play after puzzle completion
+    [Range(0f, 1f)] public float completionSoundVolume = 1f;
 
     private int currentStep = 0;
 
@@ -43,7 +50,7 @@ public class SimpleButtonTrigger : MonoBehaviour
 
             if (audioSource != null && winSound != null)
             {
-                audioSource.PlayOneShot(winSound);
+                audioSource.PlayOneShot(winSound, winSoundVolume);
             }
 
             currentStep++;
@@ -51,9 +58,16 @@ public class SimpleButtonTrigger : MonoBehaviour
             if (currentStep >= buttonSequence.Length)
             {
                 Debug.Log("Sequence complete!");
+
                 if (continueButton != null)
                 {
                     continueButton.interactable = true;
+                }
+
+                // Start coroutine to delay the completion sound
+                if (audioSource != null && completionSound != null)
+                {
+                    StartCoroutine(PlayCompletionSoundDelayed(3f));
                 }
             }
         }
@@ -63,7 +77,7 @@ public class SimpleButtonTrigger : MonoBehaviour
 
             if (audioSource != null && loseSound != null)
             {
-                audioSource.PlayOneShot(loseSound);
+                audioSource.PlayOneShot(loseSound, loseSoundVolume);
             }
 
             currentStep = 0;
@@ -73,5 +87,11 @@ public class SimpleButtonTrigger : MonoBehaviour
                 continueButton.interactable = false;
             }
         }
+    }
+
+    private IEnumerator PlayCompletionSoundDelayed(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        audioSource.PlayOneShot(completionSound, completionSoundVolume);
     }
 }
