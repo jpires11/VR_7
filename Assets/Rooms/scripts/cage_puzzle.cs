@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.UI; // <-- Add this!
+using UnityEngine.UI;
 using System.Collections;
 
 public class CagePuzzle : MonoBehaviour
@@ -9,7 +9,11 @@ public class CagePuzzle : MonoBehaviour
     public CustomSocketInteraction2 socket2;
     public CustomSocketInteraction3 socket3;
 
-    public Button continueButton; // <-- New public reference for the button
+    public Button continueButton;
+
+    [Header("Audio")]
+    public AudioSource audioSource;          // Assign in Inspector
+    public AudioClip taskCompleteSound;      // Sound to play when puzzle is complete
 
     private bool isDoorOpen = false;
 
@@ -17,7 +21,12 @@ public class CagePuzzle : MonoBehaviour
     {
         if (continueButton != null)
         {
-            continueButton.interactable = false; // Make sure button starts disabled
+            continueButton.interactable = false;
+        }
+
+        if (audioSource == null)
+        {
+            Debug.LogWarning("AudioSource is not assigned!");
         }
     }
 
@@ -41,7 +50,7 @@ public class CagePuzzle : MonoBehaviour
     private IEnumerator OpenDoorWithDelay()
     {
         yield return new WaitForSeconds(2);
-        
+
         Animator animator = GetComponent<Animator>();
         GameObject freeRoomA = GameObject.Find("Free_RoomA");
         GameObject kittyObject = null;
@@ -85,7 +94,17 @@ public class CagePuzzle : MonoBehaviour
             Debug.LogWarning("Animator component not found or Kitty_001 not found!");
         }
 
-        // Make the continue button interactable
+        // ✅ Play the completion sound
+        if (audioSource != null && taskCompleteSound != null)
+        {
+            audioSource.PlayOneShot(taskCompleteSound);
+        }
+        else
+        {
+            Debug.LogWarning("AudioSource or TaskCompleteSound not assigned!");
+        }
+
+        // ✅ Enable continue button
         if (continueButton != null)
         {
             continueButton.interactable = true;
