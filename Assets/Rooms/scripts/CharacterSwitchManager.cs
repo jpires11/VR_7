@@ -39,6 +39,9 @@ public class CharacterSwitchManager : MonoBehaviour
     private bool isSwitching = false;
     private float holdTimer = 0f;
 
+    public List<GameObject> handsModel;
+    public GameObject catModel;
+
     private Vector3 humanSavedPosition;
     private Quaternion humanSavedRotation;
     private Vector3 catSavedPosition;
@@ -168,6 +171,17 @@ public class CharacterSwitchManager : MonoBehaviour
         humanCharacter.GetComponent<HumanController>().enabled = isHuman;
         catCharacter.GetComponent<CatController>().enabled = !isHuman;
         xrOrigin.GetComponent<CatJumpControllerVignette>().enabled = !isHuman;
+        //xrOrigin.GetComponent<CatJumpVignette>().enabled = !isHuman;
+
+        foreach (var model in handsModel)
+        {
+            model.SetActive(isHuman);
+        }
+
+        if (catModel != null)
+        {
+            catModel.SetActive(!isHuman);
+        }
 
         var moveProvider = xrOrigin.GetComponentInChildren<DynamicMoveProvider>();
         if (moveProvider != null)
