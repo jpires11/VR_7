@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Prefabs/Kenney/Light/texture_01.png.meta
-guid: 2dcc2660c7aa07d46982dce5d6d41c40
-========
-guid: 3e51f6486f4f7441d9f3bdc21d1d7e3d
->>>>>>>> 152a4736c3613a7563604537b8a6d6721f6c0e32:Assets/Rooms/Textures/cat_attack_fly.png.meta
+guid: 63dd8bce8e62b3d4982a80b7786a2ae4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
