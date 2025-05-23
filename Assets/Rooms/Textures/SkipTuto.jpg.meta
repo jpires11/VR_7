@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Rooms/Textures/SkipTuto.jpg.meta
 guid: 63dd8bce8e62b3d4982a80b7786a2ae4
+=======
+<<<<<<<< HEAD:Assets/Prefabs/Kenney/Light/texture_02.png.meta
+guid: 1aea28018bc00429c8d6c86c671ec4b7
+========
+guid: a61002a373a864711868be87815e4656
+>>>>>>>> 152a4736c3613a7563604537b8a6d6721f6c0e32:Assets/Rooms/Textures/cat_math.png.meta
+>>>>>>> 0eb187b927d6ded8d259cab21a133044aa4f8ec3:Assets/Rooms/Textures/cat_math.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
