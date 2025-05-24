@@ -29,6 +29,13 @@ public class CatJumpControllerVignette : MonoBehaviour, ITunnelingVignetteProvid
     [Range(0f, 1f)]
     public float vignetteFeathering = 0.2f;
 
+    [Header("Haptic Settings")]
+    [Range(0f, 1f)]
+    public float jumpHapticAmplitude = 0.1f;
+
+    [Range(0f, 1f)]
+    public float jumpHapticDuration = 0.05f;
+
     private InputData _inputData;
     private float gravity = -7f;
     private float verticalVelocity = 0f;
@@ -92,6 +99,14 @@ public class CatJumpControllerVignette : MonoBehaviour, ITunnelingVignetteProvid
         cc.Move(move * Time.deltaTime);
     }
 
+    private void SendShortHaptics(UnityEngine.XR.InputDevice device)
+    {
+        if (device.TryGetHapticCapabilities(out HapticCapabilities capabilities) && capabilities.supportsImpulse)
+        {
+            device.SendHapticImpulse(0u, jumpHapticAmplitude, jumpHapticDuration);
+        }
+    }
+
     private void Jump()
     {
         verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
@@ -113,6 +128,9 @@ public class CatJumpControllerVignette : MonoBehaviour, ITunnelingVignetteProvid
         {
             horizontalMovement = Vector3.zero;
         }
+
+        SendShortHaptics(_inputData._leftController);
+        SendShortHaptics(_inputData._rightController);
 
         if (!vignetteActive)
         {
