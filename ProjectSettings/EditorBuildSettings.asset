@@ -6,31 +6,31 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Rooms/Scene0.unity
+    path: Assets/Game/Scene0.unity
     guid: 1827c31d7695a2547952cd1c9631ff27
   - enabled: 1
-    path: Assets/Rooms/Tuto_Final.unity
-    guid: db6caa8a473e54c9d8fe89b7f89aabb1
+    path: Assets/Game/Tuto_Final.unity
+    guid: 1ea00be3efdba47da8fea6e4b81220a2
   - enabled: 1
-    path: Assets/Rooms/Scene1.unity
-    guid: 0a97bc975ef4bf14ebb897866ef4528f
+    path: Assets/Game/Scene1.unity
+    guid: 644bb230b99604162a53d29c962ecc14
   - enabled: 1
-    path: Assets/Rooms/4 Room 3.unity
+    path: Assets/Game/Scene2.unity
     guid: ad0f5cd56f058ac4387001c400c32273
   - enabled: 1
-    path: Assets/Rooms/memory.unity
+    path: Assets/Game/Scene3.unity
     guid: 20724f3a7f816424d86aa817c20ba14b
   - enabled: 0
-    path: Assets/Rooms/Sync Rooms/0 Sync Room Intro.unity
+    path: Assets/Game/Sync Rooms/0 Sync Room Intro.unity
     guid: a7a4b6474f04cfb468555a8b41193e74
   - enabled: 1
-    path: Assets/Rooms/Sync Rooms/0 New Intro Part1.unity
+    path: Assets/Game/Sync Rooms/0 New Intro Part1.unity
     guid: 9694ae18adf674f44b9173862d1967a7
   - enabled: 1
-    path: Assets/Rooms/Sync Rooms/0 New Intro Part2.unity
+    path: Assets/Game/Sync Rooms/0 New Intro Part2.unity
     guid: 3efb9efb35d6ea3489044c525ca7e5eb
   - enabled: 1
-    path: Assets/Rooms/Sync Rooms/1 Sync Rooms.unity
+    path: Assets/Game/Sync Rooms/1 Sync Rooms.unity
     guid: 3f00040015d43334e9bdc04738594baf
   m_configObjects:
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 593bcd0afa2784cafafd8e66dc4b86f9,
