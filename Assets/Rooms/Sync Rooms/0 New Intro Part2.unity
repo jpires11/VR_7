@@ -1259,7 +1259,7 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 2
+            m_IntArgument: 7
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -3820,7 +3820,7 @@ PrefabInstance:
     - target: {fileID: 1412959158835521090, guid: e5396af14527f1040b29c7fa94a25951,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1412959158835521090, guid: e5396af14527f1040b29c7fa94a25951,
         type: 3}
@@ -5259,8 +5259,8 @@ MonoBehaviour:
   vignetteController: {fileID: 145766728}
   vignetteApertureSize: 0.725
   vignetteFeathering: 0.3
-  jumpHapticAmplitude: 0.1
-  jumpHapticDuration: 0.05
+  jumpHapticAmplitude: 0.2
+  jumpHapticDuration: 0.1
 --- !u!114 &813350911 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 844038072600798704, guid: 78d2bcd488fdc0b4b804142b5cfc7b02,
@@ -7787,7 +7787,7 @@ PrefabInstance:
     - target: {fileID: 1936457371800938376, guid: 78d2bcd488fdc0b4b804142b5cfc7b02,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1936457371800938376, guid: 78d2bcd488fdc0b4b804142b5cfc7b02,
         type: 3}
