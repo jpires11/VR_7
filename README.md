@@ -1,7 +1,7 @@
 # Nine Lives Laboratory
 
-The Nine Lives Laboratory is a place shrouded in mystery. The player awakens with no memory of how they arrived, the only clue to their escape lies in Kat, an unusually intelligent feline who seems to understand the secrets buried within the facility’s walls. As the player follows Kat deeper into the lab, they begin to uncover unsettling truths. But as the pieces come together, one question remains: was their arrival here truly an accident?
-To uncover the secrets of the Nine Lives Laboratory the player will need to solve a puzzle with the help of Kat the cat
+The Nine Lives Laboratory is a place shrouded in mystery. The player awakens with no memory of how they arrived; the only clue to their escape lies in Kat, an unusually intelligent feline who seems to understand the secrets buried within the facility’s walls. As the player follows Kat deeper into the lab, they begin to uncover unsettling truths. But as the pieces come together, one question remains: was their arrival here truly an accident?
+To uncover the secrets of the Nine Lives Laboratory, the player will need to solve a puzzle with the help of Kat the cat
 
 
 VR game for CS-444 course
@@ -14,7 +14,7 @@ useful assets:
 - https://www.fab.com/category/3d-model?is_free=1
 
 
-To be able to get the PDF document from the .rmd file some installations are needed:
+To be able to get the PDF document from the .rmd file, some installations are needed:
 - install.packages('tinytex')
 - tinytex::install_tinytex()
 
@@ -55,7 +55,7 @@ To be able to get the PDF document from the .rmd file some installations are nee
 | File/Asset                     | Type       | Notes                                           |
 |-------------------------------|------------|-------------------------------------------------|
 | `Assets/Game/scripts/InputData.cs`        | 🔴 Unmodified | Script necessary to extract input data from the controllers. Tutorial and code download from [this video](https://youtu.be/Kh_94glqO-0?feature=shared).|
-| `Assets/Game/scripts/CatJumpController.cs`   | 🟡 Adapted  | Make the cat jump by swinging both controllers. Code template from [this tutorial](https://youtu.be/Xf2eDfLxcB8?feature=shared), adapted with `InputData.cs` to handle inputs based on controllers motion.  |
+| `Assets/Game/scripts/CatJumpController.cs`   | 🟡 Adapted  | Make the cat jump by swinging both controllers. Code template from [this tutorial](https://youtu.be/Xf2eDfLxcB8?feature=shared), adapted with `InputData.cs` to handle inputs based on the controllers' motion.  |
 
 </details>
 
@@ -97,7 +97,7 @@ To be able to get the PDF document from the .rmd file some installations are nee
 
 | File/Asset                     | Type       | Notes                                           |
 |-------------------------------|------------|-------------------------------------------------|
-| `Assets/Game/scripts/cybersickeness.cs`     | 🟡 Adapted  |   NOTES    | Added simple script to turn off tunneling vignette, followed tuto from [source](https://www.youtube.com/watch?v=9Q6mEmZEoa4)   
+| `Assets/Game/scripts/cybersickeness.cs`     | 🟡 Adapted  |   NOTES    | Added simple script to turn off tunnelling vignette, followed tuto from [source](https://www.youtube.com/watch?v=9Q6mEmZEoa4)   
 
 
 </details>
@@ -107,7 +107,7 @@ To be able to get the PDF document from the .rmd file some installations are nee
 | File/Asset                     | Type       | Notes                                           |
 |-------------------------------|------------|-------------------------------------------------|
 | `Assets/Game/Sync Rooms/Narrative Story`     | 🟡 Adapted | The final exploits the Timeline feature of Unity to create a narrative story and trigger specific story events. Adapted based on [this tutorial](https://youtu.be/AJBb-PA-nAk?feature=shared).        |
-| `Assets/Game/Sync Rooms/Narrative Story`     | 🟢 Produced | The narration script are fully generated using [DeepSeek](https://www.deepseek.com/), then converted to AI voicelines using [OpenAI TTS](https://ttsopenai.com/).         |
-| `Assets/Game/Textures` | 🟡 Adapted | Images used for notes and posters. Composed of web found images, our personal drawings, and images generated using [Sora](https://sora.chatgpt.com/) and Copilote (Joana c'est quoi ton truc mets le lien stp)
+| `Assets/Game/Sync Rooms/Narrative Story`     | 🟢 Produced | The narration script is partially generated using [DeepSeek](https://www.deepseek.com/), then converted to AI voicelines using [OpenAI TTS](https://ttsopenai.com/).         |
+| `Assets/Game/Textures` | 🟡 Adapted | Images used for notes and posters. Composed of web-found images, our personal drawings, and images generated using [Sora](https://sora.chatgpt.com/) and [Microsoft Copilote](https://copilot.microsoft.com/).
 
 </details>
